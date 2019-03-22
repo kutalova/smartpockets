@@ -1,0 +1,75 @@
+$primary: #0a783d;
+
+.production-wrapper {
+  .production-item {
+    display: flex;
+    flex-flow: row wrap;
+
+    .production-link {
+      display: inline-block;
+      width: 385px;
+      height: 435px;
+      vertical-align: bottom;
+      color: #0a783d;
+      text-decoration: none;
+      text-align: center;
+      flex: 1 0 calc(33.333% - 20px);
+      padding-top: 400px;
+      box-sizing: border-box;
+      margin-bottom: 1.5em;
+      font-size: larger;
+      &.banana {
+        background: url("../../assets/img/packets/banana.png") no-repeat top
+          center;
+      }
+      &.petlia {
+        background: url("../../assets/img/packets/petlia.png") no-repeat top
+          center;
+      }
+      &.mayka {
+        background: url("../../assets/img/packets/mayka.png") no-repeat top
+          center;
+      }
+      &.fasovka {
+        background: url("../../assets/img/packets/fasovka.png") no-repeat top
+          center;
+      }
+      &.rassada {
+        background: url("../../assets/img/packets/rassada.png") no-repeat top
+          center;
+      }
+      &.vklad {
+        background: url("../../assets/img/packets/vklad.png") no-repeat top
+          center;
+      }
+      &.without {
+        background: url("../../assets/img/packets/without_print.png") no-repeat
+          top center;
+      }
+      &.paper {
+        background: url("../../assets/img/packets/paper.png") no-repeat top
+          center;
+      }
+      &.craft {
+        background: url("../../assets/img/packets/craft.png") no-repeat top
+          center;
+      }
+    }
+  }
+}
+.production-other {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #bddea9;
+  color: #fff;
+  font-size: 28px;
+  height: 181px;
+  margin: 2em 0;
+  .other-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: url("../../assets/img/other_back.png") no-repeat right center;
+    height: 100%;
+    line-height: 181px;
+  }
+}
