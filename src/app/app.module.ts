@@ -10,6 +10,7 @@ import { OurPartnersComponent } from './our-partners/our-partners.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
 import { FormCountComponent } from './form-count/form-count.component';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { OurWorksComponent } from './our-works/our-works.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { YoutubeComponent } from './youtube/youtube.component';
     OurPartnersComponent,
     OurMissionComponent,
     FormCountComponent,
-    YoutubeComponent
+    YoutubeComponent,
+    OurWorksComponent
   ],
   imports: [
     BrowserModule,
