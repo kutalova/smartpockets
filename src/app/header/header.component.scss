@@ -19,7 +19,7 @@ ul {
   & > div {
     display: inline-block;
     float: right;
-    clear: both;
+    // clear: both;
   }
   a.logo {
     background: url("../../assets/img/logo.png") no-repeat center center;
@@ -28,7 +28,7 @@ ul {
     height: 6em;
     margin: 1em;
     display: inline-block;
-
+    float:left;
   }
   a {
     color: $primary;
