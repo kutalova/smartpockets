@@ -8,6 +8,7 @@ import { HeadSliderComponent } from './head-slider/head-slider.component';
 import { OurProdComponent } from './our-prod/our-prod.component';
 import { OurPartnersComponent } from './our-partners/our-partners.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
+import { FormCountComponent } from './form-count/form-count.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { OurMissionComponent } from './our-mission/our-mission.component';
     HeadSliderComponent,
     OurProdComponent,
     OurPartnersComponent,
-    OurMissionComponent
+    OurMissionComponent,
+    FormCountComponent
   ],
   imports: [
     BrowserModule,
