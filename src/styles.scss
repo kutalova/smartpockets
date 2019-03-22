@@ -1,30 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic');
-@import '~normalize.css/normalize.css';
-*{
-  font-family: "Open Sans",Helvetica, sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic");
+@import "~normalize.css/normalize.css";
+* {
+  font-family: "Open Sans", Helvetica, sans-serif;
 }
-body *{
+body * {
   padding: 0;
   margin: 0;
 }
-.section-wrapper{
+.section-wrapper {
+  max-width: 1400px;
   padding: 0 0 15px 0;
-clear: both;
-margin: 0 auto;
-    h2{
+  clear: both;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+  h2 {
     font-size: 34px;
     font-weight: 700;
     color: #111;
-        text-align: center;
+    text-align: center;
     &:after {
       content: "";
-  display: block;
-  width: 47px;
-  height: 71px;
-  margin-top: 30px;
-  margin: 30px auto 0;
-  background: url('./assets/img/after_header.png') no-repeat;
-      }
+      display: block;
+      width: 47px;
+      height: 71px;
+      margin-top: 30px;
+      margin: 30px auto 0;
+      background: url("./assets/img/after_header.png") no-repeat;
     }
+  }
 }
