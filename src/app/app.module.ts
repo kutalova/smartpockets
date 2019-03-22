@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeadSliderComponent } from './head-slider/head-slider.component';
 import { OurProdComponent } from './our-prod/our-prod.component';
 import { OurPartnersComponent } from './our-partners/our-partners.component';
+import { OurMissionComponent } from './our-mission/our-mission.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OurPartnersComponent } from './our-partners/our-partners.component';
     HeaderComponent,
     HeadSliderComponent,
     OurProdComponent,
-    OurPartnersComponent
+    OurPartnersComponent,
+    OurMissionComponent
   ],
   imports: [
     BrowserModule,
