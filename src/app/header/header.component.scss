@@ -3,6 +3,10 @@ header {
   width: 100%;
   margin: 0 auto;
   position: sticky;
+  top: 0;
+  background-color: #fff;
+  height: 150px;
+  z-index: 125;
 }
 
 ul {
@@ -28,7 +32,7 @@ ul {
     height: 6em;
     margin: 1em;
     display: inline-block;
-    float:left;
+    float: left;
   }
   a {
     color: $primary;
@@ -41,12 +45,13 @@ ul {
   }
   .upper-row-wrapper {
     margin-top: 1em;
-    ul, .phone-wrapper {
+    ul,
+    .phone-wrapper {
       float: right;
     }
-    .phone-wrapper{
+    .phone-wrapper {
       padding-right: 1em;
-      a{
+      a {
         display: inline-block;
         line-height: 28px;
       }
@@ -80,5 +85,4 @@ ul {
     background: url("../../assets/img/Viber.png") no-repeat;
     background-size: contain;
   }
-
 }
