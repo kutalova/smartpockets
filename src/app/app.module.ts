@@ -11,6 +11,9 @@ import { OurMissionComponent } from './our-mission/our-mission.component';
 import { FormCountComponent } from './form-count/form-count.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { OurWorksComponent } from './our-works/our-works.component';
+import { FormFeedbackComponent } from './form-feedback/form-feedback.component';
+import { OurBlogComponent } from './our-blog/our-blog.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { OurWorksComponent } from './our-works/our-works.component';
     OurMissionComponent,
     FormCountComponent,
     YoutubeComponent,
-    OurWorksComponent
+    OurWorksComponent,
+    FormFeedbackComponent,
+    OurBlogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
