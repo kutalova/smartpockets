@@ -42,7 +42,7 @@ export class OurFeedbackComponent implements OnInit {
         "Ангелина Романова &mdash; маркетолог компании, ООО Стройсфера Групп"
     }
   ];
-  slideConfig = { slidesToShow: 3, slidesToScroll: 2, dots: true };
+  slideConfig = { slidesToShow: 3, slidesToScroll: 3, dots: true };
 
   constructor() {}
 
