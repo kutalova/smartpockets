@@ -7,7 +7,7 @@
       [config]="slideConfig"
     >
       <div ngxSlickItem *ngFor="let slide of slides" class="partner-item">
-        <img src="{{ slide.img }}" [alt]="slide.alt" width="172px" />
+        <img [src]="slide.img" [alt]="slide.alt" width="172px" />
       </div>
     </ngx-slick-carousel>
   </div>

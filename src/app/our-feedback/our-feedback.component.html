@@ -1,3 +1,21 @@
-<p>
-  our-feedback works!
-</p>
+<div class="section-wrapper">
+  <h2>Нам доверяют</h2>
+  <div class="reviews_wrapper">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <blockquote
+        ngxSlickItem
+        *ngFor="let review of reviews"
+        class="review-item"
+      >
+        <img [src]="review.img" [alt]="review.name" />
+        <q [innerHtml]="review.text"></q>
+        <footer [innerHtml]="review.name"></footer>
+        <!-- <img src="{{ slide.img }}" [alt]="slide.alt" width="172px" /> -->
+      </blockquote>
+    </ngx-slick-carousel>
+  </div>
+</div>
