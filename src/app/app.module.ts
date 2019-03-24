@@ -16,9 +16,9 @@ import { OurBlogComponent } from "./our-blog/our-blog.component";
 import { FooterComponent } from "./footer/footer.component";
 
 import { SlickCarouselModule } from "ngx-slick-carousel";
-import { OurFeedbackComponent } from './our-feedback/our-feedback.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { OurCertificatesComponent } from './our-certificates/our-certificates.component';
+import { OurFeedbackComponent } from "./our-feedback/our-feedback.component";
+import { AboutUsComponent } from "./about-us/about-us.component";
+import { OurCertificatesComponent } from "./our-certificates/our-certificates.component";
 
 @NgModule({
   declarations: [

@@ -1,3 +1,14 @@
 <div class="section-wrapper">
   <h2>Наши работы</h2>
+  <div class="works_wrapper">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let image of images" class="slider-item">
+        <img [src]="image.src" width="100%" />
+      </div>
+    </ngx-slick-carousel>
+  </div>
 </div>
