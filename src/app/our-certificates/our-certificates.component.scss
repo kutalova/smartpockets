@@ -1,0 +1,51 @@
+.certificates-wrapper {
+  background-color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  padding: 4em 0;
+  .certificate-item {
+    background: #fff;
+    margin: 0 2em;
+    img {
+      max-width: 450px;
+    }
+  }
+  .text {
+    background: #fff;
+    padding: 1em;
+    h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 1.15em;
+    }
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  .probootstrap-custom-link.link-sm {
+    font-size: 14px;
+  }
+
+  .probootstrap-custom-link {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #188243;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 300;
+  }
+  .probootstrap-custom-link:after {
+    z-index: 1;
+    position: absolute;
+    background: #188243;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+  }
+}
