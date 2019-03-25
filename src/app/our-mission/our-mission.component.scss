@@ -40,6 +40,9 @@ $i: 1;
     margin-right: 3em;
   }
 }
+h2.mission {
+  // margin-bottom: 0;
+}
 .mission-wrapper {
   background: url("../../assets/img/mission_back.png") center center;
   background-size: cover;
@@ -61,8 +64,42 @@ $i: 1;
 }
 
 @for $i from 1 through 3 {
-  .mission:nth-child(#{$i + 1}) {
+  p.mission:nth-child(#{$i + 1}) {
     margin-left: 55px * $i;
     $i: $i + 1;
+  }
+}
+@media (max-width: 450px) {
+  .testimonial {
+    max-width: 35vh;
+    font-size: 1.2em;
+    line-height: 1.35em;
+
+    q {
+      &:before {
+        top: -0.5em;
+        left: 0.5em;
+      }
+      &:after {
+        top: -0.35em;
+        left: -0.35em;
+      }
+    }
+    footer {
+      line-height: 24px;
+    }
+  }
+  .mission-wrapper{
+    .mission{
+      max-width: 100%;
+      border-radius: 0;
+      background: #ffffffa6;
+      margin-left: 0;
+    }
+  }
+}
+@media (max-width: 390px) {
+  h2.mission{
+    // margin-bottom: 2em;
   }
 }
