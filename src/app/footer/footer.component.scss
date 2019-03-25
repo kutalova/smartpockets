@@ -1,0 +1,71 @@
+ul {
+  list-style: none;
+  li {
+    display: inline-block;
+    padding: 1em;
+  }
+}
+footer {
+  background-color: #0a783d;
+  color: #fff;
+  min-height: 200px;
+  margin-top: 4em;
+  .section-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-left {
+    display: inline-block;
+    .vcard {
+      padding: 2em 0;
+      h4 {
+        padding-bottom: 0.5em;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      address {
+        font-style: normal;
+      }
+    }
+  }
+  .footer-center {
+    display: inline-block;
+    background: url("../../assets/img/logo_footer.png") no-repeat top center;
+    margin-top: -2.5em;
+    width: 160px;
+    height: 187px;
+    text-align: center;
+  }
+  .footer-right {
+    display: inline-block;
+    .networks-wrapper {
+      li a {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+      }
+    }
+    .tlgrm {
+      background: url("../../assets/img/telegram_white.png") no-repeat;
+      background-size: contain;
+    }
+    .ig {
+      background: url("../../assets/img/ig_white.png") no-repeat;
+      background-size: contain;
+    }
+    .yt {
+      background: url("../../assets/img/yt_white.png") no-repeat;
+      background-size: contain;
+    }
+    .fb {
+      background: url("../../assets/img/fb_white.png") no-repeat;
+      background-size: contain;
+    }
+    .viber {
+      background: url("../../assets/img/viber_white.png") no-repeat;
+      background-size: contain;
+    }
+  }
+}
