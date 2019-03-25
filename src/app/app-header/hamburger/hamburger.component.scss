@@ -9,11 +9,6 @@
  * prefixes.
  */
 
-body {
-  /* make it look decent enough */
-  background: #232323;
-  color: #cdcdcd;
-}
 
 a {
   text-decoration: none;
@@ -88,13 +83,11 @@ a:hover {
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-#menuToggle .ham-wrap span:first-child {
-
+#menuToggle div span:first-child {
   transform-origin: 0% 0%;
 }
 
 #menuToggle span:nth-last-child(2) {
-
   transform-origin: 0% 100%;
 }
 
@@ -102,32 +95,25 @@ a:hover {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked .ham-wrap{
-  span {
-   opacity: 1;
-   background: red;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
- }
+#menuToggle input:checked ~ div .t {
+  opacity: 1;
+
+  transform: rotate(45deg) translate(0px, -4px);
 }
 
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ .ham-wrap {
-  span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
+#menuToggle input:checked ~ div .m {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ .ham-wrap {
-  span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
+#menuToggle input:checked ~ div .b {
+  transform: rotate(-45deg) translate(0, -1px);
 }
 
 /*
@@ -139,7 +125,7 @@ a:hover {
   width: 100%;
   margin: -100px 0px 0 0px;
   padding: 50px;
-  padding-top: 125px;
+  padding-top: 175px;
   box-sizing: border-box;
   background: #ededed;
   list-style-type: none;
