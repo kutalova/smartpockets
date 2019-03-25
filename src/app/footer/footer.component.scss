@@ -10,6 +10,10 @@ footer {
   color: #fff;
   min-height: 200px;
   margin-top: 4em;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
   .section-wrapper {
     display: flex;
     justify-content: space-between;
@@ -20,11 +24,9 @@ footer {
       padding: 2em 0;
       h4 {
         padding-bottom: 0.5em;
+        font-size: larger;
       }
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+
       address {
         font-style: normal;
       }
