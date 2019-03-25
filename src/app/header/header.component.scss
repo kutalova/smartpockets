@@ -18,6 +18,9 @@ ul {
     padding: 1em;
   }
 }
+nav.header-ham {
+  display: none;
+}
 
 .sp-nav {
   max-width: 1400px;
@@ -92,14 +95,41 @@ ul {
 @media (max-width: 950px) {
   .sp-nav {
     a.logo {
-      width: 4em;
-      height: 3em;
-      margin: 0.5em;
+      width: 5.5em;
+      height: 4.5em;
+      margin: 0.75em;
       z-index: 999;
-    position: relative;
+      position: relative;
     }
-    .upper-row-wrapper,
+    .upper-row-wrapper {
+      margin-top: 1.65em;
+      float: left;
+    }
     .lower-row-wrapper {
+      display: none;
+    }
+    nav.header-ham {
+      display: block;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .sp-nav {
+    .networks-wrapper {
+      margin-top: 0.75em;
+      li {
+        padding: 0.5em;
+        a {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 620px) {
+  .sp-nav {
+    .upper-row-wrapper {
       display: none;
     }
   }
