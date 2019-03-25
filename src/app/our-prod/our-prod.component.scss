@@ -4,55 +4,72 @@ $primary: #0a783d;
   .production-item {
     display: flex;
     flex-flow: row wrap;
-
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
     .production-link {
       display: inline-block;
-      width: 385px;
-      height: 435px;
+      max-width: 385px;
+      margin: 0 2em;
+      min-height: 386px;
       vertical-align: bottom;
       color: #0a783d;
       text-decoration: none;
       text-align: center;
-      flex: 1 0 calc(33.333% - 20px);
-      padding-top: 400px;
+      flex: 1 0 300px;
+      // padding-top: 400px;
       box-sizing: border-box;
       margin-bottom: 1.5em;
       font-size: larger;
       &.banana {
         background: url("../../assets/img/packets/banana.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.petlia {
         background: url("../../assets/img/packets/petlia.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.mayka {
         background: url("../../assets/img/packets/mayka.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.fasovka {
         background: url("../../assets/img/packets/fasovka.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.rassada {
         background: url("../../assets/img/packets/rassada.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.vklad {
         background: url("../../assets/img/packets/vklad.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.without {
         background: url("../../assets/img/packets/without_print.png") no-repeat
           top center;
+        background-size: contain;
       }
       &.paper {
         background: url("../../assets/img/packets/paper.png") no-repeat top
           center;
+        background-size: contain;
       }
       &.craft {
         background: url("../../assets/img/packets/craft.png") no-repeat top
           center;
+        background-size: contain;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        padding-top: 110%;
       }
     }
   }
@@ -71,5 +88,16 @@ $primary: #0a783d;
     background: url("../../assets/img/other_back.png") no-repeat right center;
     height: 100%;
     line-height: 181px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .production-wrapper {
+    .production-item {
+      .production-link {
+        max-width: 285px;
+        min-height: 186px;
+      }
+    }
   }
 }
