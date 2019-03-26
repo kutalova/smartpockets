@@ -90,7 +90,13 @@ $primary: #0a783d;
     line-height: 181px;
   }
 }
-
+@media (max-width: 1450px){
+  .production-other{
+    .other-wrapper{
+      padding-left: 2em;
+    }
+  }
+}
 @media (max-width: 1024px) {
   .production-wrapper {
     .production-item {
@@ -98,6 +104,24 @@ $primary: #0a783d;
         max-width: 285px;
         min-height: 186px;
       }
+    }
+  }
+}
+
+@media (max-width: 1450px){
+  .production-other{
+    .other-wrapper{
+      padding-left: 2em;
+    }
+  }
+}
+@media (max-width:550px){
+  .production-other{
+    .other-wrapper{
+      padding: 2em .35em 0;
+      line-height: 30px;
+      text-align: center;
+      background-position-y: 0em;
     }
   }
 }
