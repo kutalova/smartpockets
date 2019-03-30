@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 @Component({
     selector: 'app-form-feedback',
     templateUrl: './form-feedback.component.html',
-    styleUrls: ['./form-feedback.component.scss', '../shared/styles/icons.css', '../shared/styles/style.min.css']
+    styleUrls: ['./form-feedback.component.scss', '../shared/styles/icons.css', '../shared/styles/forms.scss']
 })
 export class FormFeedbackComponent implements OnInit {
     feedbackForm = new FormGroup({

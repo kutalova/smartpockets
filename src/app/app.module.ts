@@ -20,6 +20,8 @@ import { OurFeedbackComponent } from './our-feedback/our-feedback.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { OurCertificatesComponent } from './our-certificates/our-certificates.component';
 import { HamburgerComponent } from './app-header/hamburger/hamburger.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { HamburgerComponent } from './app-header/hamburger/hamburger.component';
     OurCertificatesComponent,
     HamburgerComponent
   ],
-  imports: [BrowserModule, SlickCarouselModule, AppRoutingModule],
+  imports: [BrowserModule, SlickCarouselModule, FormsModule,  ReactiveFormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,37 +1,45 @@
 <div class="section-wrapper">
     <h2>Связаться с нами</h2>
 </div>
-<div class="feedback-form-wrapper">
-    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+<div class="section-form-wrapper">
+    <!--<div class="section-wrapper">-->
+        <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
-        <div class="form-group">
-            <label for="name">Имя</label>
-            <div class="form-field">
-                <i class="icon icon-user2"></i>
-                <input type="text" formControlName="name" id="name" class="form-control">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <div class="form-field">
+                    <i class="icon icon-user2"></i>
+                    <input type="text" formControlName="name" id="name" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <div class="form-field">
-                <i class="icon icon-mail"></i>
-                <input type="text" id="email" formControlName="email" class="form-control">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="form-field">
+                    <i class="icon icon-mail"></i>
+                    <input type="text" id="email" formControlName="email" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <div class="form-field">
-                <i class="icon icon-phone"></i>
-                <input type="text" id="phone" formControlName="phone" class="form-control" placeholder="Your phone">
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="form-field">
+                    <i class="icon icon-phone"></i>
+                    <input type="text" id="phone" formControlName="phone" class="form-control" required>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="comment">Комментарий</label>
-            <div class="form-field">
-                <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
+            <div class="form-group form-textarea">
+                <label for="comment">Комментарий</label>
+                <div class="form-field">
+                    <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
+                </div>
             </div>
-        </div>
+            <div class="form-group form-button">
+                <div class="form-field">
+                    <button type="submit" class="form-submit">отправить</button>
+                </div>
+            </div>
 
-        <button type="submit">submit</button>
-    </form>
+
+        </form>
+    <!--</div>-->
+
 </div>
