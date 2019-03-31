@@ -23,7 +23,7 @@ import { HamburgerComponent } from './app-header/hamburger/hamburger.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomSelectComponent } from './shared/custom-select.component';
-
+import { ClickOutsideModule } from 'ng-click-outside';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,7 @@ import { CustomSelectComponent } from './shared/custom-select.component';
     HamburgerComponent,
     CustomSelectComponent
   ],
-  imports: [BrowserModule, SlickCarouselModule, FormsModule,  ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, SlickCarouselModule, FormsModule, ClickOutsideModule,  ReactiveFormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

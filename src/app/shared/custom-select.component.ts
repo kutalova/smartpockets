@@ -1,11 +1,6 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
-interface selectOption {
-    title: string;
-    value: string;
-}
-
 @Component({
     selector: 'app-custom-select',
     providers: [
@@ -16,11 +11,11 @@ interface selectOption {
         }
     ],
     template: `
-        <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}">
+        <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}" (clickOutside)="onClickedOutside($event, titleInput.value)">
             <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
             <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();"></i>
             <!--<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" >-->
-                <!--<span class="sr-only">Toggle Dropdown</span>-->
+            <!--<span class="sr-only">Toggle Dropdown</span>-->
             <!--</button>-->
             <div class="dropdown-menu">
                 <button
@@ -31,7 +26,7 @@ interface selectOption {
                         (click)="optionSelect(option);">
                     {{option}}
                 </button>
-                <input type="text" (click)="optionSelect(option);" placeholder="Введите свое значение"/>
+                <input type="text" #titleInput placeholder="Введите свое значение"/>
                 <!--<div class="dropdown-item" *ngIf="!options.length">No items for select</div>-->
             </div>
         </div>
@@ -46,13 +41,14 @@ export class CustomSelectComponent implements ControlValueAccessor {
     get placeholder(): string {
         return this.selectedOption ? this.selectedOption : 'Select';
     }
-    set placeholder(value){
+
+    set placeholder(value) {
         this.selectedOption = value;
     }
 
-    open: boolean = false;
+    open = false;
 
-    optionSelect(option: selectOption) {
+    optionSelect(option: string) {
         console.log(option);
         this.writeValue(option);
         this.onTouched();
@@ -63,8 +59,24 @@ export class CustomSelectComponent implements ControlValueAccessor {
         this.open = !this.open;
     }
 
+    close(input) {
+        if (input) {
+            this.onChange(input);
+            this.placeholder = input;
+        }
+        this.open = false;
+    }
+
     get isOpen(): boolean {
         return this.open;
+    }
+
+    onClickedOutside(e: Event, input) {
+        console.log(input);
+        this.close(input);
+
+        // input ? this.placeholder
+        console.log('Clicked outside:', e);
     }
 
     writeValue(value) {
@@ -74,16 +86,16 @@ export class CustomSelectComponent implements ControlValueAccessor {
         }
         // const selectedEl = this.options.find(el => el.value === value);
         // if (selectedEl) {
-            console.log(this.placeholder, 'plchldr');
-            this.selectedOption = value;
-            this.onChange(this.selectedOption);
-            this.placeholder = this.selectedOption;
+        console.log(this.placeholder, 'plchldr');
+        this.selectedOption = value;
+        this.onChange(this.selectedOption);
+        // this.placeholder = this.selectedOption;
 
         // }
     }
 
-    onChange: any = () => {  };
-    onTouched: any = () => { };
+    onChange: any = () => { };
+    onTouched: any = () => {};
 
     registerOnChange(fn) {
         this.onChange = fn;
