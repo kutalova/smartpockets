@@ -1,0 +1,54 @@
+.btn-group-justified {
+  display: flex;
+}
+.btn-group-justified .dropdown-menu {
+  width: 100%;
+}
+.show>.dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
+.btn-group-justified .btn:first-child {
+  flex: 1;
+  text-align: left;
+}
+
+.btn-group-justified .dropdown-menu {
+  width: 100%;
+}
+
+.btn-group-justified .dropdown-item {
+  cursor: pointer;
+}
+
+.btn-group-justified .dropdown-item.active {
+  cursor: default;
+}
+
+.btn-group-justified .dropdown-item:active {
+  background: transparent;
+  color: inherit;
+}
+
+.btn-group-justified .dropdown-item:focus {
+  outline: none !important;
+}

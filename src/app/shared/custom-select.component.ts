@@ -17,10 +17,11 @@ interface selectOption {
     ],
     template: `
         <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}">
-            <!--<button type="button" class="btn btn-secondary">{{ placeholder }}</button>-->
-            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();">
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
+            <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
+            <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();"></i>
+            <!--<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" >-->
+                <!--<span class="sr-only">Toggle Dropdown</span>-->
+            <!--</button>-->
             <div class="dropdown-menu">
                 <button
                         type="button"
@@ -30,54 +31,30 @@ interface selectOption {
                         (click)="optionSelect(option);">
                     {{option}}
                 </button>
-                <input type="text" placeholder="Введите свое значение"/>
+                <input type="text" (click)="optionSelect(option);" placeholder="Введите свое значение"/>
                 <!--<div class="dropdown-item" *ngIf="!options.length">No items for select</div>-->
             </div>
         </div>
     `,
-    styles: [`.btn-group-justified {
-        display: flex;
-    }
-
-    .btn-group-justified .btn:first-child {
-        flex: 1;
-        text-align: left;
-    }
-
-    .btn-group-justified .dropdown-menu {
-        width: 100%;
-    }
-
-    .btn-group-justified .dropdown-item {
-        cursor: pointer;
-    }
-
-    .btn-group-justified .dropdown-item.active {
-        cursor: default;
-    }
-
-    .btn-group-justified .dropdown-item:active {
-        background: transparent;
-        color: inherit;
-    }
-
-    .btn-group-justified .dropdown-item:focus {
-        outline: none !important;
-    }`]
+    styleUrls: [`./custom-select.component.scss`, './styles/icons.css']
 })
 export class CustomSelectComponent implements ControlValueAccessor {
-    @Input() options: selectOption[] = [];
+    @Input() options = [];
 
-    selectedOption: selectOption;
+    selectedOption: string;
 
-    // get placeholder(): string {
-    //     return this.selectedOption && this.selectedOption.hasOwnProperty('title') ? this.selectedOption.title : 'Select';
-    // }
+    get placeholder(): string {
+        return this.selectedOption ? this.selectedOption : 'Select';
+    }
+    set placeholder(value){
+        this.selectedOption = value;
+    }
 
     open: boolean = false;
 
     optionSelect(option: selectOption) {
-        this.writeValue(option.value);
+        console.log(option);
+        this.writeValue(option);
         this.onTouched();
         this.open = false;
     }
@@ -92,19 +69,21 @@ export class CustomSelectComponent implements ControlValueAccessor {
 
     writeValue(value) {
         if (!value || typeof value !== 'string') {
+            console.log('error');
             return;
         }
-        const selectedEl = this.options.find(el => el.value === value);
-        if (selectedEl) {
-            this.selectedOption = selectedEl;
-            this.onChange(this.selectedOption.value);
-        }
+        // const selectedEl = this.options.find(el => el.value === value);
+        // if (selectedEl) {
+            console.log(this.placeholder, 'plchldr');
+            this.selectedOption = value;
+            this.onChange(this.selectedOption);
+            this.placeholder = this.selectedOption;
+
+        // }
     }
 
-    onChange: any = () => {
-    };
-    onTouched: any = () => {
-    };
+    onChange: any = () => {  };
+    onTouched: any = () => { };
 
     registerOnChange(fn) {
         this.onChange = fn;

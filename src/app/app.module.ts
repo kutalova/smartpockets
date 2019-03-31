@@ -22,6 +22,7 @@ import { OurCertificatesComponent } from './our-certificates/our-certificates.co
 import { HamburgerComponent } from './app-header/hamburger/hamburger.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CustomSelectComponent } from './shared/custom-select.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
     OurFeedbackComponent,
     AboutUsComponent,
     OurCertificatesComponent,
-    HamburgerComponent
+    HamburgerComponent,
+    CustomSelectComponent
   ],
   imports: [BrowserModule, SlickCarouselModule, FormsModule,  ReactiveFormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
