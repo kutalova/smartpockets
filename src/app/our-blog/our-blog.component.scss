@@ -1,0 +1,11 @@
+.post-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  .post-item {
+    margin: 0 2em;
+    display: inline-block;
+  }
+
+}
