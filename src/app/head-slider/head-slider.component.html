@@ -1,3 +1,14 @@
-<p>
-  head-slider works!
-</p>
+  <ngx-slick-carousel
+          class="carousel"
+          #slickModal="slick-carousel"
+          [config]="slideConfig"
+  >
+    <div ngxSlickItem *ngFor="let slide of slides" class="partner-item">
+      <img [src]="slide.img" [alt]="slide.alt" width="100%" />
+    </div>
+  </ngx-slick-carousel>
+<div class="lower-row">
+  <div class="lower-row-item"><a href="#mission">Наша миссия</a></div>
+  <div class="lower-row-item"><a href="#about-us">О нас</a></div>
+  <div class="lower-row-item"><a href="#production">Наша продукция</a></div>
+</div>

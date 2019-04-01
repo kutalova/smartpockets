@@ -19,7 +19,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { OurFeedbackComponent } from './our-feedback/our-feedback.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { OurCertificatesComponent } from './our-certificates/our-certificates.component';
-import { HamburgerComponent } from './app-header/hamburger/hamburger.component';
+import { HamburgerComponent } from './header/hamburger/hamburger.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomSelectComponent } from './shared/custom-select.component';
