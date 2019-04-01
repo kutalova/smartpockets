@@ -11,12 +11,10 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
         }
     ],
     template: `
-        <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}" (clickOutside)="onClickedOutside($event, titleInput.value)">
+        <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}" (click)="toggleOpen();"
+             (clickOutside)="onClickedOutside($event, titleInput.value)">
             <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
             <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();"></i>
-            <!--<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" >-->
-            <!--<span class="sr-only">Toggle Dropdown</span>-->
-            <!--</button>-->
             <div class="dropdown-menu">
                 <button
                         type="button"
@@ -72,30 +70,22 @@ export class CustomSelectComponent implements ControlValueAccessor {
     }
 
     onClickedOutside(e: Event, input) {
-        console.log(input);
         this.close(input);
-
-        // input ? this.placeholder
-        console.log('Clicked outside:', e);
     }
 
     writeValue(value) {
         if (!value || typeof value !== 'string') {
-            console.log('error');
             return;
         }
-        // const selectedEl = this.options.find(el => el.value === value);
-        // if (selectedEl) {
-        console.log(this.placeholder, 'plchldr');
         this.selectedOption = value;
         this.onChange(this.selectedOption);
-        // this.placeholder = this.selectedOption;
 
-        // }
     }
 
-    onChange: any = () => { };
-    onTouched: any = () => {};
+    onChange: any = () => {
+    };
+    onTouched: any = () => {
+    };
 
     registerOnChange(fn) {
         this.onChange = fn;
