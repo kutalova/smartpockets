@@ -1,9 +1,14 @@
-.slick-slide {
-  margin: 0 15px;
-}
-.slick-list {
-  margin: 0 -15px;
-}
-.slider-item {
-  max-width: 300px;
+.works_wrapper {
+  .slick-slide {
+    margin: 0 15px;
+  }
+
+  .slick-list {
+    margin: 0 -15px;
+  }
+
+  .slider-item {
+    max-width: 300px;
+  }
+
 }

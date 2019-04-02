@@ -26,6 +26,8 @@ import {CustomSelectComponent} from './shared/custom-select.component';
 import {ClickOutsideModule} from 'ng-click-outside';
 
 import {FacebookModule} from 'ngx-facebook';
+import {ModalService} from './shared/modal.service';
+import {ModalComponent} from './shared/modal';
 
 @NgModule({
     declarations: [
@@ -45,10 +47,11 @@ import {FacebookModule} from 'ngx-facebook';
         AboutUsComponent,
         OurCertificatesComponent,
         HamburgerComponent,
-        CustomSelectComponent
+        CustomSelectComponent,
+        ModalComponent
     ],
     imports: [BrowserModule, SlickCarouselModule, FormsModule, ClickOutsideModule, FacebookModule.forRoot(), ReactiveFormsModule, HttpClientModule, AppRoutingModule],
-    providers: [],
+    providers: [ModalService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

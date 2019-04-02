@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "our-blog.component.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE;EAEA;;AAEA;EACE;EACA",
+  "file": "our-blog.component.css"
+}
