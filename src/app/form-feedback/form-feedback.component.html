@@ -6,7 +6,7 @@
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
         <div class="form-group">
-            <label for="name">Имя</label>
+            <label for="name">Имя *</label>
             <div class="form-field">
                 <i class="icon icon-user2"></i>
                 <input type="text" formControlName="name" id="name" class="form-control" required
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <div class="form-field">
                 <i class="icon icon-mail"></i>
                 <input type="text" id="email" formControlName="email" class="form-control" required
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="phone">Телефон</label>
+            <label for="phone">Телефон *</label>
             <div class="form-field">
                 <i class="icon icon-phone"></i>
                 <input type="text" id="phone" formControlName="phone" class="form-control" required

@@ -15,7 +15,8 @@ export class FormCountComponent implements OnInit {
 
     size_banana = ['15*20', '20*30', '30*40', '40*50', '50*60', '60*60', '60*70'];
     size_mayka = ['15*22', '20*35', '30*48', '35*57', '40*69', '45*69'];
-    density = ['10 мкм', '15 мкм', '20 мкм', '25 мкм', '30 мкм', '35 мкм', '40 мкм', '45 мкм', '50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм'];
+    density_mayka = ['10 мкм', '15 мкм', '20 мкм', '25 мкм', '30 мкм', '35 мкм', '40 мкм', '45 мкм'];
+    density_banana = ['50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм'];
     copies = ['100', '200', '300', '500', '1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30000', '50000', '100000'];
     colour = ['белый', 'цветной'];
     colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -48,6 +49,7 @@ export class FormCountComponent implements OnInit {
                 response => console.log(response),
                 response => console.log(response)
             );
+        this.countForm.reset();
     }
 
     ngOnInit() {
@@ -58,17 +60,17 @@ export class FormCountComponent implements OnInit {
 
         this.countForm = this.fb.group({
             packetType: ['Майка'],
-            matType: ['Высокого давления'],
-            size: [''],
+            matType: ['Низкого давления'],
+            size: ['Выберите значение'],
             name: ['', Validators.required],
             phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
             comment: [''],
             email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-            density: [''],
-            colour_count: [''],
-            colour: [''],
-            copies: [''],
-            sides: [''],
+            density: ['Выберите значение'],
+            colour_count: ['1'],
+            colour: ['белый'],
+            copies: ['100'],
+            sides: ['Односторонний'],
         });
 
     }

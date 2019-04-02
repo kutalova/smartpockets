@@ -5,14 +5,14 @@
     <form [formGroup]="countForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
         <div class="form-group form-radiocheck">
-            <label>Тип пакета</label>
+            <label>Тип пакета:</label>
             <div class="form-field flat">
                 <input class="form-radio" type="radio" name="packetType" value='Майка' formControlName="packetType">
                 <input class="form-radio" type="radio" name='packetType' value='Банан' formControlName="packetType">
             </div>
         </div>
         <div class="form-group form-radiocheck">
-            <label>Тип полиэтилена</label>
+            <label>Тип полиэтилена:</label>
             <div class="form-field flat">
                 <input class="form-radio " type="radio" name="matType" value='Низкого давления'
                        formControlName="matType">
@@ -34,9 +34,13 @@
         <div class="form-group">
             <label for="name">Плотность</label>
             <div class="form-field">
-                <select formControlName="density">
-                    <option *ngFor="let dens of density">{{dens}}</option>
+                <select formControlName="density" *ngIf="this.countForm.get('packetType').value === 'Банан' ">
+                    <option *ngFor="let dens of density_banana">{{dens}}</option>
                 </select>
+                <select formControlName="density" *ngIf="this.countForm.get('packetType').value === 'Майка' ">
+                    <option *ngFor="let dens of density_mayka">{{dens}}</option>
+                </select>
+
 
             </div>
         </div>
@@ -82,7 +86,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <div class="form-field">
                 <i class="icon icon-mail"></i>
                 <input type="text" id="email" formControlName="email" class="form-control" required>

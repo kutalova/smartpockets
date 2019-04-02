@@ -12,21 +12,22 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     ],
     template: `
         <div class="form-group">
-            <div class="btn-group btn-group-justified form-control" [ngClass]="{'show':isOpen}" (click)="toggleOpen();"
-             (clickOutside)="onClickedOutside($event, titleInput.value)">
-            <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
-            <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();"></i>
-            <div class="dropdown-menu">
-                <button
-                        type="button"
-                        class="dropdown-item"
-                        *ngFor="let option of options"
-                        [ngClass]="{'active':option.value === value}"
-                        (click)="optionSelect(option);">
-                    {{option}}
-                </button>
-                <input type="text" #titleInput placeholder="Введите свое значение"/>
-            </div>
+            <div class="btn-group btn-group-justified form-control" [ngClass]="{'show':open}" (click)="toggleOpen();"
+                 (clickOutside)="onClickedOutside($event, titleInput.value)">
+                <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
+                <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split"></i>
+                <div class="dropdown-menu" (click)="toggleOpen();">
+                    <button
+                            type="button"
+                            class="dropdown-item"
+                            *ngFor="let option of options"
+                            [ngClass]="{'active':option.value === value}"
+                            (click)="optionSelect(option);">
+                        {{option}}
+                    </button>
+                    <input type="text" #titleInput class="own"
+                           placeholder="Введите свое значение"/>
+                </div>
             </div>
         </div>
     `,
@@ -48,19 +49,20 @@ export class CustomSelectComponent implements ControlValueAccessor {
     open = false;
 
     optionSelect(option: string) {
-        console.log(option);
         this.writeValue(option);
         this.onTouched();
+
         this.open = false;
+        console.log(this.isOpen);
     }
 
     toggleOpen() {
+        console.log('thats toggle');
         this.open = !this.open;
     }
 
     close(input) {
         if (input) {
-            this.onChange(input);
             this.placeholder = input;
         }
         this.open = false;
@@ -71,6 +73,7 @@ export class CustomSelectComponent implements ControlValueAccessor {
     }
 
     onClickedOutside(e: Event, input) {
+        // console.log(e);
         this.close(input);
     }
 
@@ -80,7 +83,7 @@ export class CustomSelectComponent implements ControlValueAccessor {
         }
         this.selectedOption = value;
         this.onChange(this.selectedOption);
-
+        this.open = false;
     }
 
     onChange: any = () => {

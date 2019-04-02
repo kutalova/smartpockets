@@ -63,6 +63,8 @@ button {
   cursor: pointer;
   display: block;
   margin: 0 0 .5em .5em;
+  width: 100%;
+  text-align: left;
 }
 
 .btn-group-justified .dropdown-item:active {

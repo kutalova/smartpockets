@@ -27,8 +27,9 @@ export class FormFeedbackComponent implements OnInit {
         this.http.post(this.endpoint, uploadData)
             .subscribe(
                 response => console.log(response),
-                response => console.log(response)
+                response => console.error('An error occured')
             );
+        this.feedbackForm.reset();
     }
 
     ngOnInit() {
