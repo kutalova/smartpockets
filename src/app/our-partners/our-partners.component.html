@@ -1,14 +1,13 @@
 <div class="section-wrapper">
-  <h2>Наши пaртнеры</h2>
-  <div class="partners_wrapper">
-    <ngx-slick-carousel
-      class="carousel"
-      #slickModal="slick-carousel"
-      [config]="slideConfig"
-    >
-      <div ngxSlickItem *ngFor="let slide of slides" class="partner-item">
-        <img [alt]="slide.alt" [attr.data-lazy]="slide.img" width="172px"/>
-      </div>
-    </ngx-slick-carousel>
-  </div>
+    <h2>Наши пaртнеры</h2>
+    <div class="partners_wrapper">
+        <ngx-slick-carousel
+                [config]="slideConfig"
+                class="carousel"
+        >
+            <div *ngFor="let slide of slides" class="partner-item" ngxSlickItem>
+                <img [alt]="slide.alt" [src]="slide.img" width="172px"/>
+            </div>
+        </ngx-slick-carousel>
+    </div>
 </div>

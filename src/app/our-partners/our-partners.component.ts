@@ -31,7 +31,7 @@ export class OurPartnersComponent implements OnInit {
         {img: '../../assets/img/partners/VR.png', alt: 'Виар'}
     ];
     slideConfig = {
-        lazyLoad: 'ondemand', slidesToShow: 4, slidesToScroll: 3, arrows: false, dots: true, responsive: [
+        slidesToShow: 4, slidesToScroll: 3, arrows: false, dots: true, responsive: [
             {
                 breakpoint: 950,
                 settings: {

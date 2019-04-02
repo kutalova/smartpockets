@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serverDomainLocal: 'http://localhost/post_mail/sendMail.php',
+  serverDomain: 'http://smartpockets.com.ua/post_mail/sendMail.php',
 };
 
 /*
