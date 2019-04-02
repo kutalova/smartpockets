@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment.prod';
 
 @Component({
     selector: 'app-form-feedback',
@@ -8,16 +9,13 @@ import {HttpClient} from '@angular/common/http';
     styleUrls: ['./form-feedback.component.scss', '../shared/styles/icons.css', '../shared/styles/forms.scss']
 })
 export class FormFeedbackComponent implements OnInit {
-    feedbackForm = new FormGroup({
-        name: new FormControl(''),
-        phone: new FormControl(''),
-        email: new FormControl(''),
-        comment: new FormControl(''),
-    });
-    // http: HttpClient;
-    endpoint = 'http://localhost/post_mail/sendMail.php';
-    constructor(private http: HttpClient) {
+    feedbackForm: FormGroup;
+    endpoint = environment.serverDomain;
+    emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+
+    constructor(private http: HttpClient, private fb: FormBuilder) {
     }
+
     onSubmit() {
         const uploadData = new FormData();
         uploadData.append('email', this.feedbackForm.get('email').value);
@@ -32,8 +30,14 @@ export class FormFeedbackComponent implements OnInit {
                 response => console.log(response)
             );
     }
-    ngOnInit() {
 
+    ngOnInit() {
+        this.feedbackForm = this.fb.group({
+            name: ['', Validators.required],
+            phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+            comment: [''],
+            email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+        });
     }
 
 

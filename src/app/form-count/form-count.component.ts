@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment.prod';
 
 @Component({
     selector: 'app-form-count',
@@ -10,6 +11,7 @@ import {HttpClient} from '@angular/common/http';
 export class FormCountComponent implements OnInit {
 
     countForm: FormGroup;
+    emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
     size_banana = ['15*20', '20*30', '30*40', '40*50', '50*60', '60*60', '60*70'];
     size_mayka = ['15*22', '20*35', '30*48', '35*57', '40*69', '45*69'];
@@ -19,7 +21,7 @@ export class FormCountComponent implements OnInit {
     colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
     sides = ['Односторонний', 'Двусторонний'];
 
-    endpoint = 'http://localhost/post_mail/sendMail.php';
+    endpoint = environment.serverDomain;
 
     constructor(private http: HttpClient, private fb: FormBuilder) {
     }
@@ -55,18 +57,18 @@ export class FormCountComponent implements OnInit {
     initForm() {
 
         this.countForm = this.fb.group({
-            packetType: ['', Validators.required],
-            matType: ['', Validators.required],
-            size: ['', Validators.required],
+            packetType: ['Майка'],
+            matType: ['Высокого давления'],
+            size: [''],
             name: ['', Validators.required],
-            phone: new FormControl(''),
-            comment: new FormControl(''),
-            email: ['', Validators.required],
-            density: ['', Validators.required],
-            colour_count: ['', Validators.required],
-            colour: ['', Validators.required],
-            copies: ['', Validators.required],
-            sides: ['', Validators.required],
+            phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+            comment: [''],
+            email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+            density: [''],
+            colour_count: [''],
+            colour: [''],
+            copies: [''],
+            sides: [''],
         });
 
     }

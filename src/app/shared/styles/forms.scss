@@ -131,6 +131,10 @@ label {
 
 }
 
+//.ng-touched.ng-invalid,
+.invalid {
+  border: 1px solid red !important;
+}
 .form-radiocheck,
 .form-textarea {
   width: 100%;
@@ -162,6 +166,11 @@ label {
     box-sizing: content-box;
     border-radius: 3px;
     font-weight: 700;
+  }
+
+  button:disabled {
+    border: 2px solid #cecece;
+    color: #cecece;
   }
 }
 

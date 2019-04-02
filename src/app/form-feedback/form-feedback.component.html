@@ -3,43 +3,46 @@
 </div>
 <div class="section-form-wrapper">
     <!--<div class="section-wrapper">-->
-        <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="form-wrapper">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
-            <div class="form-group">
-                <label for="name">Имя</label>
-                <div class="form-field">
-                    <i class="icon icon-user2"></i>
-                    <input type="text" formControlName="name" id="name" class="form-control">
-                </div>
+        <div class="form-group">
+            <label for="name">Имя</label>
+            <div class="form-field">
+                <i class="icon icon-user2"></i>
+                <input type="text" formControlName="name" id="name" class="form-control" required
+                       [ngClass]="!feedbackForm.controls['name'].valid && feedbackForm.controls['name']?.touched  ? 'invalid' : '' ">
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <div class="form-field">
-                    <i class="icon icon-mail"></i>
-                    <input type="text" id="email" formControlName="email" class="form-control">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div class="form-field">
+                <i class="icon icon-mail"></i>
+                <input type="text" id="email" formControlName="email" class="form-control" required
+                       [ngClass]="!feedbackForm.controls['email'].valid && feedbackForm.controls['email']?.touched  ? 'invalid' : '' ">
             </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <div class="form-field">
-                    <i class="icon icon-phone"></i>
-                    <input type="text" id="phone" formControlName="phone" class="form-control" required>
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Телефон</label>
+            <div class="form-field">
+                <i class="icon icon-phone"></i>
+                <input type="text" id="phone" formControlName="phone" class="form-control" required
+                       [ngClass]="!feedbackForm.controls['phone'].valid && feedbackForm.controls['phone']?.touched  ? 'invalid' : '' ">
             </div>
-            <div class="form-group form-textarea">
-                <label for="comment">Комментарий</label>
-                <div class="form-field">
-                    <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
-                </div>
+        </div>
+        <div class="form-group form-textarea">
+            <label for="comment">Комментарий</label>
+            <div class="form-field">
+                <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
             </div>
-            <div class="form-group form-button">
-                <div class="form-field">
-                    <button type="submit" class="form-submit">отправить</button>
-                </div>
+        </div>
+        <div class="form-group form-button">
+            <div class="form-field">
+                <button type="submit" class="form-submit" [disabled]="!feedbackForm.valid">отправить</button>
             </div>
+        </div>
 
 
-        </form>
+    </form>
     <!--</div>-->
 
 </div>
