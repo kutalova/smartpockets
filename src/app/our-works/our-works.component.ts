@@ -18,6 +18,7 @@ export class OurWorksComponent implements OnInit {
         {src: '../../assets/img/slider-photos/paper_3.jpg', big_src: '../../assets/img/slider-photos/big_paper_3.jpg', type: 'paper'}
     ];
     slideConfig = {
+        lazyLoad: 'ondemand',
         slidesToShow: 5,
         slidesToScroll: 2,
         dots: true,
