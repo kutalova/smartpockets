@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -19,14 +19,14 @@ export class FormFeedbackComponent implements OnInit {
     constructor(private http: HttpClient) {
     }
     onSubmit() {
-        let postVars = {
-            email: this.feedbackForm.value.email,
-            name: this.feedbackForm.value.email,
-            message: this.feedbackForm.value.comment
-        };
+        const uploadData = new FormData();
+        uploadData.append('email', this.feedbackForm.get('email').value);
+        uploadData.append('name', this.feedbackForm.get('name').value);
+        uploadData.append('phone', this.feedbackForm.get('phone').value);
+        uploadData.append('comment', this.feedbackForm.get('comment').value);
+        uploadData.append('feedback', '1');
 
-        // You may also want to check the response. But again, let's keep it simple.
-        this.http.post(this.endpoint, postVars)
+        this.http.post(this.endpoint, uploadData)
             .subscribe(
                 response => console.log(response),
                 response => console.log(response)

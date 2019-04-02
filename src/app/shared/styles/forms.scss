@@ -38,6 +38,66 @@ label {
 
   .form-field {
     position: relative;
+
+    &.flat {
+      display: inline;
+    }
+
+    .form-radio {
+      -webkit-appearance: none;
+
+      width: auto;
+      height: 2em;
+      display: inline-block;
+      line-height: 2em;
+      cursor: pointer;
+      text-align: center;
+      margin: 0 1em;
+      padding: 0 1em;
+      box-sizing: content-box;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+
+      &:checked {
+        border-radius: 36px;
+        border: 1px silver dashed;
+      }
+
+      &[value^='Майка']:after {
+        content: 'Майка';
+        display: block;
+      }
+
+      &[value^='Банан']:after {
+        content: 'Банан';
+        display: block;
+      }
+
+      &[value^='Низкого давления']:after {
+        content: 'Низкого давления';
+        display: block;
+      }
+
+      &[value^='Высокого давления']:after {
+        content: 'Высокого давления';
+        display: block;
+      }
+    }
+
+
+    select {
+      height: 42px;
+      border-radius: 4px;
+      width: 100%;
+      font-size: smaller;
+      padding-left: .75em;
+      box-sizing: border-box;
+      border-color: #ccc;
+
+    }
   }
 
   .form-control {
@@ -60,10 +120,9 @@ label {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     box-sizing: border-box;
 
-    &.select {
-      height: 46px;
-    }
+
   }
+
 
   .form-control:focus {
     box-shadow: none;
@@ -72,6 +131,7 @@ label {
 
 }
 
+.form-radiocheck,
 .form-textarea {
   width: 100%;
   flex-basis: 100%;

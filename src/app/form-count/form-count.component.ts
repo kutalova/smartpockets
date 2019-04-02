@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -28,7 +28,7 @@ export class FormCountComponent implements OnInit {
 
         const uploadData = new FormData();
         uploadData.append('email', this.countForm.get('email').value);
-        uploadData.append('name:', this.countForm.get('name').value);
+        uploadData.append('name', this.countForm.get('name').value);
         uploadData.append('phone', this.countForm.get('phone').value);
         uploadData.append('packet_type', this.countForm.get('packetType').value);
         uploadData.append('mat_type', this.countForm.get('matType').value);
@@ -38,6 +38,8 @@ export class FormCountComponent implements OnInit {
         uploadData.append('colour', this.countForm.get('colour').value);
         uploadData.append('colour_count', this.countForm.get('colour_count').value);
         uploadData.append('sides', this.countForm.get('sides').value);
+        uploadData.append('comment', this.countForm.get('comment').value);
+        uploadData.append('count', '1');
 
         this.http.post(this.endpoint, uploadData)
             .subscribe(

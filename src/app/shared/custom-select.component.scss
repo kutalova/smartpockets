@@ -1,3 +1,11 @@
+button {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  height: 100%;
+}
+
 .btn-group-justified {
   display: flex;
 }
@@ -34,6 +42,17 @@
 
 .btn-group-justified .dropdown-menu {
   width: 100%;
+
+  input {
+    outline: none;
+    margin-left: .5em;
+    height: 30px;
+    width: 90%;
+    padding-left: 10px;
+    border-radius: 6px;
+    border-color: #c0c0c026;
+    border-style: ridge;
+  }
 }
 
 .btn-group-justified .dropdown-item {
@@ -41,7 +60,9 @@
 }
 
 .btn-group-justified .dropdown-item.active {
-  cursor: default;
+  cursor: pointer;
+  display: block;
+  margin: 0 0 .5em .5em;
 }
 
 .btn-group-justified .dropdown-item:active {

@@ -11,7 +11,8 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
         }
     ],
     template: `
-        <div class="btn-group btn-group-justified" [ngClass]="{'show':isOpen}" (click)="toggleOpen();"
+        <div class="form-group">
+            <div class="btn-group btn-group-justified form-control" [ngClass]="{'show':isOpen}" (click)="toggleOpen();"
              (clickOutside)="onClickedOutside($event, titleInput.value)">
             <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
             <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split" (click)="toggleOpen();"></i>
@@ -25,11 +26,11 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
                     {{option}}
                 </button>
                 <input type="text" #titleInput placeholder="Введите свое значение"/>
-                <!--<div class="dropdown-item" *ngIf="!options.length">No items for select</div>-->
+            </div>
             </div>
         </div>
     `,
-    styleUrls: [`./custom-select.component.scss`, './styles/icons.css']
+    styleUrls: [`./custom-select.component.scss`, './styles/icons.css', './styles/forms.css']
 })
 export class CustomSelectComponent implements ControlValueAccessor {
     @Input() options = [];
@@ -37,7 +38,7 @@ export class CustomSelectComponent implements ControlValueAccessor {
     selectedOption: string;
 
     get placeholder(): string {
-        return this.selectedOption ? this.selectedOption : 'Select';
+        return this.selectedOption ? this.selectedOption : 'Выберите значение';
     }
 
     set placeholder(value) {

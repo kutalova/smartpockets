@@ -4,22 +4,23 @@
 <div class="section-form-wrapper">
     <form [formGroup]="countForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
-        <div class="form-group">
+        <div class="form-group form-radiocheck">
             <label>Тип пакета</label>
-            <div class="form-field">
-                <input type="radio" name="packetType" value='Майка' formControlName="packetType"
-                >Майка
-                <input type="radio" name='packetType' value='Банан' formControlName="packetType"
-                >Банан
+            <div class="form-field flat">
+
+                <input class="form-radio" type="radio" name="packetType" value='Майка' formControlName="packetType"
+                >
+                <input class="form-radio" type="radio" name='packetType' value='Банан' formControlName="packetType"
+                >
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group form-radiocheck">
             <label>Тип полиэтилена</label>
-            <div class="form-field">
-                <input type="radio" name="matType" value='Низкого давления' formControlName="matType">Низкого
-                давления
-                <input type="radio" name='matType' value='Высокого давления' formControlName="matType">Высокого
-                давления
+            <div class="form-field flat">
+                <input class="form-radio " type="radio" name="matType" value='Низкого давления'
+                       formControlName="matType">
+                <input class="form-radio" type="radio" name='matType' value='Высокого давления'
+                       formControlName="matType">
             </div>
         </div>
 
