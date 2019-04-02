@@ -79,7 +79,6 @@
     margin-top: -90px;
     justify-content: space-around;
 }
-
 .lower-row .lower-row-item {
     display: inline-block;
     height: 90px;
@@ -93,10 +92,15 @@
     letter-spacing: 1px;
     font-size: 2em;
 }
-
 .lower-row .lower-row-item a {
     text-decoration: none;
     color: #FFF;
+}
+
+@media (max-width: 1100px) {
+    .lower-row {
+        display: none;
+    }
 }
 
 /*# sourceMappingURL=head-slider.component.css.map */

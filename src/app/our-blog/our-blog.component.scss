@@ -6,6 +6,27 @@
   .post-item {
     margin: 0 2em;
     display: inline-block;
+
   }
 
+}
+
+@media (max-width: 780px) {
+  .post-wrapper {
+    flex-flow: column wrap;
+    align-items: center;
+
+    .post-item {
+      margin: 2em 0;
+    }
+
+  }
+}
+
+@media (max-width: 500px) {
+  .section-wrapper {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
 }

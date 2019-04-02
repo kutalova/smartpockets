@@ -1,27 +1,34 @@
 ul {
   list-style: none;
+
   li {
     display: inline-block;
     padding: 1em;
   }
 }
+
 footer {
   background-color: #0a783d;
   color: #fff;
   min-height: 200px;
   margin-top: 4em;
+
   a {
     color: #fff;
     text-decoration: none;
   }
+
   .section-wrapper {
     display: flex;
     justify-content: space-between;
   }
+
   .footer-left {
     display: inline-block;
+
     .vcard {
       padding: 2em 0;
+
       h4 {
         padding-bottom: 0.5em;
         font-size: larger;
@@ -31,43 +38,82 @@ footer {
         font-style: normal;
       }
     }
-  }
-  .footer-center {
-    display: inline-block;
-    background: url("../../assets/img/logo_footer.png") no-repeat top center;
-    margin-top: -2.5em;
-    width: 160px;
-    height: 187px;
-    text-align: center;
-  }
-  .footer-right {
-    display: inline-block;
+
     .networks-wrapper {
-      li a {
-        display: inline-block;
-        width: 28px;
-        height: 28px;
+      li {
+        a {
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+        }
       }
     }
+
     .tlgrm {
       background: url("../../assets/img/telegram_white.png") no-repeat;
       background-size: contain;
     }
+
     .ig {
       background: url("../../assets/img/ig_white.png") no-repeat;
       background-size: contain;
     }
+
     .yt {
       background: url("../../assets/img/yt_white.png") no-repeat;
       background-size: contain;
     }
+
     .fb {
       background: url("../../assets/img/fb_white.png") no-repeat;
       background-size: contain;
     }
+
     .viber {
       background: url("../../assets/img/viber_white.png") no-repeat;
       background-size: contain;
+    }
+  }
+}
+
+.footer-center {
+  display: inline-block;
+  background: url("../../assets/img/logo_footer.png") no-repeat top center;
+  margin-top: -2.5em;
+  width: 160px;
+  height: 187px;
+  text-align: center;
+}
+
+.footer-right {
+  display: inline-block;
+  padding-top: 1em;
+  text-align: right;
+
+  .tel,
+  .email {
+    font-size: large;
+    padding: .25em;
+    display: inline-block;
+  }
+}
+
+
+@media (max-width: 500px) {
+  footer {
+    .section-wrapper {
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      .footer-center {
+        display: none;
+      }
+
+      .footer-left,
+      .footer-right {
+        text-align: center;
+      }
     }
   }
 }

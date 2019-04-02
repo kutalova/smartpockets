@@ -1,12 +1,14 @@
-.slick-list{
+.slick-list {
   width: 100%;
 }
+
 .carousel:hover .slick-next,
-.carousel:hover .slick-prev{
+.carousel:hover .slick-prev {
   opacity: .7;
 }
+
 .slick-prev,
-.slick-next{
+.slick-next {
   text-decoration: none;
   display: block;
   width: 30px;
@@ -18,15 +20,16 @@
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
-  color: rgba(0,0,0,.8);
-  text-shadow: 1px 1px 0 rgba(255,255,255,.3);
+  color: rgba(0, 0, 0, .8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, .3);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, .8);
   border-radius: 0;
   padding: 30px;
   right: 0;
 }
+
 .slick-prev:before,
 .slick-next:before {
   font-family: icomoon;
@@ -50,42 +53,54 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.slick-next:before{
+
+.slick-next:before {
   content: "\e92a";
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
   outline: none;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, .8);
   color: black;
 }
-.slick-prev{
+
+.slick-prev {
   left: 0;
 }
-.lower-row{
+
+.lower-row {
   display: flex;
   position: relative;
   margin-top: -90px;
   justify-content: space-around;
-.lower-row-item{
-  display: inline-block;
-  height: 90px;
-  background: #0a783d7a;
-  text-transform: uppercase;
 
-  line-height: 90px;
-  width: 375px;
-  text-align: center;
-  font-weight: 300;
-  border-radius: 6px 6px 0 0;
-  letter-spacing: 1px;
-  font-size: 2em;
-  a{
-    text-decoration: none;
-    color: #FFF;
+  .lower-row-item {
+    display: inline-block;
+    height: 90px;
+    background: #0a783d7a;
+    text-transform: uppercase;
+
+    line-height: 90px;
+    width: 375px;
+    text-align: center;
+    font-weight: 300;
+    border-radius: 6px 6px 0 0;
+    letter-spacing: 1px;
+    font-size: 2em;
+
+    a {
+      text-decoration: none;
+      color: #FFF;
+    }
   }
 }
+
+@media(max-width: 1100px) {
+  .lower-row {
+    display: none;
+  }
 }

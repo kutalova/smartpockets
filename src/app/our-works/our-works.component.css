@@ -7,5 +7,8 @@
 .works_wrapper .slider-item {
   max-width: 300px;
 }
+.works_wrapper .slick-dots {
+  bottom: -35px;
+}
 
 /*# sourceMappingURL=our-works.component.css.map */

@@ -21,7 +21,22 @@ export class OurWorksComponent implements OnInit {
         slidesToShow: 5,
         slidesToScroll: 2,
         dots: true,
-        arrows: false
+        arrows: false, responsive: [
+            {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     constructor() {

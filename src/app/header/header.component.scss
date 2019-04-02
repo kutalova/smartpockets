@@ -114,6 +114,9 @@ nav.header-ham {
   }
 }
 @media (max-width: 750px) {
+  header {
+    height: 105px;
+  }
   .sp-nav {
     .networks-wrapper {
       margin-top: 0.75em;
