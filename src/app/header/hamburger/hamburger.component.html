@@ -1,10 +1,10 @@
 <!-- <nav role="navigation" class="header-ham"> -->
-  <div id="menuToggle">
+<div (clickOutside)="uncheck()" [formGroup]="hamburgerForm" id="menuToggle">
     <!--
       A fake / hidden checkbox is used as click reciever,
       so you can use the :checked selector on it.
     -->
-    <input type="checkbox" />
+    <input formControlName="hamCheck" type="checkbox"/>
 
     <!--
       Some spans to act as a hamburger.
@@ -20,13 +20,11 @@
       but hey, it's pure CSS magic.
     -->
     <ul id="menu">
-      <!-- <a href="tel:380683392449"><li>(068) - 339 - 24 - 49</li></a> -->
-      <!-- <a href="tel:380504192547"><li>(050) - 419 - 25 - 47</li></a> -->
       <li><a href="#">Главная</a></li>
-        <li><a href="#mission">Наша миссия</a></li>
-        <li><a href="#production">Продукция</a></li>
-        <li><a href="#feedback">Контакты</a></li>
-        <li><a href="#about-us">О нас</a></li>
+        <li><a (click)="uncheck();" href="#mission">Наша миссия</a></li>
+        <li><a (click)="uncheck();" href="#production">Продукция</a></li>
+        <li><a (click)="uncheck();" href="#contacts">Контакты</a></li>
+        <li><a (click)="uncheck();" href="#about-us">О нас</a></li>
     </ul>
   </div>
 <!-- </nav> -->

@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-hamburger',
-  templateUrl: './hamburger.component.html',
-  styleUrls: ['./hamburger.component.scss']
+    selector: 'app-hamburger',
+    templateUrl: './hamburger.component.html',
+    styleUrls: ['./hamburger.component.scss']
 })
 export class HamburgerComponent implements OnInit {
+    hamburgerForm: FormGroup;
+    open: boolean = true;
 
-  constructor() { }
+    constructor(private fb: FormBuilder) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.hamburgerForm = this.fb.group({
+            hamCheck: [''],
+        });
+    }
 
+    uncheck() {
+        this.hamburgerForm.controls['hamCheck'].reset();
+    }
 }

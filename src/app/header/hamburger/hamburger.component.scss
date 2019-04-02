@@ -46,9 +46,6 @@ a:hover {
   top: 1.15em;
   position: sticky;
   float: right;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
 
   cursor: pointer;
 
@@ -122,7 +119,7 @@ a:hover {
   width: 100%;
   margin: -100px 0px 0 0px;
   padding: 50px;
-  padding-top: 175px;
+  padding-top: 195px;
   box-sizing: border-box;
   background: #ededed;
   list-style-type: none;
@@ -145,4 +142,8 @@ a:hover {
  */
 #menuToggle input:checked ~ ul {
   transform: none;
+}
+
+.show {
+  display: block;
 }
