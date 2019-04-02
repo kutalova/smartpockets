@@ -39,13 +39,7 @@ export class OurPartnersComponent implements OnInit {
                     slidesToScroll: 2,
                 }
             },
-            {
-                breakpoint: 550,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
+
         ]
     };
 
