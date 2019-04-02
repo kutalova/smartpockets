@@ -10,7 +10,7 @@ $primary: #0a783d;
     .production-link {
       display: inline-block;
       max-width: 385px;
-      margin: 0 2em;
+      margin: 0 2em 1.5em;
       min-height: 386px;
       vertical-align: bottom;
       color: #0a783d;
@@ -19,8 +19,9 @@ $primary: #0a783d;
       flex: 1 0 300px;
       // padding-top: 400px;
       box-sizing: border-box;
-      margin-bottom: 1.5em;
+      //margin-bottom: 1.5em;
       font-size: larger;
+      position: relative;
       &.banana {
         background: url("../../assets/img/packets/banana.png") no-repeat top
           center;
@@ -70,6 +71,44 @@ $primary: #0a783d;
         position: relative;
         display: inline-block;
         padding-top: 110%;
+      }
+
+      .more-button {
+        display: none;
+        height: 100%;
+        background: #61b343;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        flex-flow: column wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-radius: 36px;
+
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: #FFF;
+          padding: 1em 0;
+
+          &.examples {
+            border: 1px #61b343 dashed;
+            background: #fff;
+            border-radius: 36px;
+            color: #188243;
+            padding: .5em 1em;
+          }
+        }
+      }
+
+      &:hover {
+        animation: .8s jump ease alternate;
+
+        .more-button {
+          display: flex;
+        }
       }
     }
   }
@@ -123,5 +162,17 @@ $primary: #0a783d;
       text-align: center;
       background-position-y: 0em;
     }
+  }
+}
+
+// JUMP
+
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
