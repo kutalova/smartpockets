@@ -1,4 +1,3 @@
-<!-- <nav role="navigation" class="header-ham"> -->
 <div (clickOutside)="uncheck()" [formGroup]="hamburgerForm" id="menuToggle">
     <!--
       A fake / hidden checkbox is used as click reciever,
@@ -13,18 +12,17 @@
       not that McDonalds stuff.
     -->
     <div class="ham-wrap">
-      <span class="t"></span> <span class="m"></span> <span class="b"></span>
+        <span class="t"></span> <span class="m"></span> <span class="b"></span>
     </div>
     <!--
       Too bad the menu has to be inside of the button
       but hey, it's pure CSS magic.
     -->
     <ul id="menu">
-      <li><a href="#">Главная</a></li>
+        <li><a (click)="uncheck();" href="#">Главная</a></li>
         <li><a (click)="uncheck();" href="#mission">Наша миссия</a></li>
         <li><a (click)="uncheck();" href="#production">Продукция</a></li>
         <li><a (click)="uncheck();" href="#contacts">Контакты</a></li>
         <li><a (click)="uncheck();" href="#about-us">О нас</a></li>
     </ul>
-  </div>
-<!-- </nav> -->
+</div>
