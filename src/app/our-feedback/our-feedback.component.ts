@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-our-feedback',
@@ -58,4 +58,8 @@ export class OurFeedbackComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  trackByFn(index, item) {
+    return index; // or item.id
+  }
 }

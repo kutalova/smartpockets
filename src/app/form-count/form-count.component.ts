@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment.prod';
@@ -6,7 +6,8 @@ import {environment} from '../../environments/environment.prod';
 @Component({
     selector: 'app-form-count',
     templateUrl: './form-count.component.html',
-    styleUrls: ['./form-count.component.scss', '../shared/styles/icons.css', '../shared/styles/forms.scss']
+    styleUrls: ['./form-count.component.scss', '../shared/styles/icons.css', '../shared/styles/forms.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormCountComponent implements OnInit {
 

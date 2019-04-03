@@ -45,4 +45,8 @@ export class OurWorksComponent implements OnInit {
 
     ngOnInit() {
     }
+
+    trackByFn(index, item) {
+        return index; // or item.id
+    }
 }

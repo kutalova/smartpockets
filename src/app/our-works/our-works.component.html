@@ -6,7 +6,7 @@
       #slickModal="slick-carousel"
       [config]="slideConfig"
     >
-      <div ngxSlickItem *ngFor="let image of images" class="slider-item">
+      <div *ngFor="let image of images;trackBy: trackByFn" class="slider-item" ngxSlickItem>
         <a [href]="image.big_src" data-fancybox="gallery"> <img [attr.data-lazy]="image.src"/></a>
       </div>
     </ngx-slick-carousel>

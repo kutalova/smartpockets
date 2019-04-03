@@ -3,7 +3,7 @@
           #slickModal="slick-carousel"
           [config]="slideConfig"
   >
-    <div ngxSlickItem *ngFor="let slide of slides" class="partner-item">
+    <div *ngFor="let slide of slides;trackBy: trackByFn" class="partner-item" ngxSlickItem>
         <img [alt]="slide.alt" [attr.data-lazy]="slide.img" width="100%"/>
     </div>
   </ngx-slick-carousel>

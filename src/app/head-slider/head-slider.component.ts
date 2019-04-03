@@ -18,4 +18,7 @@ export class HeadSliderComponent implements OnInit {
   ngOnInit() {
   }
 
+  trackByFn(index, item) {
+    return index; // or item.id
+  }
 }
