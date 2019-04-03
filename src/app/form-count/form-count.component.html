@@ -35,6 +35,7 @@
             <label for="name">Плотность</label>
             <div class="form-field">
                 <select formControlName="density" *ngIf="this.countForm.get('packetType').value === 'Банан' ">
+
                     <option *ngFor="let dens of density_banana">{{dens}}</option>
                 </select>
                 <select formControlName="density" *ngIf="this.countForm.get('packetType').value === 'Майка' ">

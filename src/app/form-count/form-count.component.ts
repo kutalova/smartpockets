@@ -43,13 +43,13 @@ export class FormCountComponent implements OnInit {
         uploadData.append('sides', this.countForm.get('sides').value);
         uploadData.append('comment', this.countForm.get('comment').value);
         uploadData.append('count', '1');
-
         this.http.post(this.endpoint, uploadData)
             .subscribe(
                 response => console.log(response),
                 response => console.log(response)
             );
         this.countForm.reset();
+        this.countForm.get('packetType').setValue('Майка');
     }
 
     ngOnInit() {
@@ -69,7 +69,7 @@ export class FormCountComponent implements OnInit {
             density: ['Выберите значение'],
             colour_count: ['1'],
             colour: ['белый'],
-            copies: ['100'],
+            copies: ['Выберите значение'],
             sides: ['Односторонний'],
         });
 

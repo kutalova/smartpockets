@@ -12,7 +12,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     ],
     template: `
         <div class="form-group">
-            <div class="btn-group btn-group-justified form-control" [ngClass]="{'show':open}" (click)="toggleOpen();"
+            <div class="btn-group btn-group-justified form-control" [ngClass]="{'show':isOpen}" (click)="toggleOpen();"
                  (clickOutside)="onClickedOutside($event, titleInput.value)">
                 <button type="button" class="btn btn-secondary">{{ placeholder }}</button>
                 <i class="icon icon-chevron-down btn btn-secondary dropdown-toggle dropdown-toggle-split"></i>
@@ -53,16 +53,15 @@ export class CustomSelectComponent implements ControlValueAccessor {
         this.onTouched();
 
         this.open = false;
-        console.log(this.isOpen);
     }
 
     toggleOpen() {
-        console.log('thats toggle');
         this.open = !this.open;
     }
 
     close(input) {
         if (input) {
+            this.writeValue(input);
             this.placeholder = input;
         }
         this.open = false;
@@ -73,7 +72,6 @@ export class CustomSelectComponent implements ControlValueAccessor {
     }
 
     onClickedOutside(e: Event, input) {
-        // console.log(e);
         this.close(input);
     }
 
