@@ -27,6 +27,7 @@ import {ClickOutsideModule} from 'ng-click-outside';
 
 import {FacebookModule} from 'ngx-facebook';
 import {SimpleSmoothScrollModule} from 'ng2-simple-smooth-scroll';
+import {UpButtonComponent} from './up-button/up-button.component';
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import {SimpleSmoothScrollModule} from 'ng2-simple-smooth-scroll';
         OurCertificatesComponent,
         HamburgerComponent,
         CustomSelectComponent,
+        UpButtonComponent,
     ],
     imports: [BrowserModule, SlickCarouselModule, FormsModule, SimpleSmoothScrollModule, ClickOutsideModule, FacebookModule.forRoot(), ReactiveFormsModule, HttpClientModule, AppRoutingModule],
     providers: [],

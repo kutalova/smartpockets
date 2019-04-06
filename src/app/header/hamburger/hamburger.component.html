@@ -19,9 +19,10 @@
       but hey, it's pure CSS magic.
     -->
     <ul id="menu">
-        <li><a (click)="uncheck();" href="#head">Главная</a></li>
+        <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-300" [showHash]="false" href="#head">Главная</a></li>
         <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#mission">Наша миссия</a></li>
-        <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#production">Продукция</a></li>
+        <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-300" [showHash]="false"
+               href="#production">Продукция</a></li>
         <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#contacts">Контакты</a></li>
         <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#about-us ">О нас</a></li>
     </ul>
