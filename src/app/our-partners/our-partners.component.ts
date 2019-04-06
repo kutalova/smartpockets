@@ -31,11 +31,24 @@ export class OurPartnersComponent implements OnInit {
         {img: '../../assets/img/partners/VR.png', alt: 'Виар'}
     ];
     slideConfig = {
-        slidesToShow: 4, slidesToScroll: 3, arrows: false, dots: true, responsive: [
+        slidesToShow: 6, slidesToScroll: 6, arrows: true, dots: true, centerMode: false, responsive: [
+            {
+                breakpoint: 1250,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
             {
                 breakpoint: 950,
                 settings: {
                     slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2,
                     slidesToScroll: 2,
                 }
             },
