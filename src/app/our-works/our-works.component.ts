@@ -18,11 +18,11 @@ export class OurWorksComponent implements OnInit {
         {src: '../../assets/img/slider-photos/paper_3.jpg', big_src: '../../assets/img/slider-photos/big_paper_3.jpg', type: 'paper'}
     ];
     slideConfig = {
-        lazyLoad: 'ondemand',
+        lazyLoad: 'progressive',
         slidesToShow: 5,
-        slidesToScroll: 2,
+        slidesToScroll: 3,
         dots: true,
-        arrows: false, responsive: [
+        arrows: true, responsive: [
             {
                 breakpoint: 950,
                 settings: {
