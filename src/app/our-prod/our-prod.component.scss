@@ -4,22 +4,20 @@ $primary: #0a783d;
   .production-item {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     align-content: space-between;
     .production-link {
       display: inline-block;
-      max-width: 385px;
+      max-width: 325px;
       margin: 0 2em 1.5em;
-      min-height: 386px;
+      min-height: 326px;
       vertical-align: bottom;
       color: #0a783d;
       text-decoration: none;
       text-align: center;
       flex: 1 0 300px;
-      // padding-top: 400px;
       box-sizing: border-box;
-      //margin-bottom: 1.5em;
       font-size: larger;
       position: relative;
       &.banana {
