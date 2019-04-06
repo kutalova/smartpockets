@@ -29,4 +29,8 @@
   width: 350px !important;
 }
 
+.fb_iframe_widget a {
+  font-family: sans-serif !important;
+}
+
 /*# sourceMappingURL=our-blog.component.css.map */
