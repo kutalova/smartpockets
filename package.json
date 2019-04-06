@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
     "ng-click-outside": "^4.0.0",
+    "ng2-simple-smooth-scroll": "^0.3.0",
     "ng2-smooth-scroll": "^1.0.1",
     "ngx-facebook": "^2.4.0",
     "ngx-slick-carousel": "^0.4.4",
