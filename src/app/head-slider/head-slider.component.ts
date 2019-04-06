@@ -12,7 +12,10 @@ export class HeadSliderComponent implements OnInit {
     { img: '../../assets/img/head-slider-photos/2.jpg', alt: 'slider' },
     { img: '../../assets/img/head-slider-photos/3.png', alt: 'slider' },
   ];
-  slideConfig = {lazyLoad: 'ondemand', slidesToShow: 1, slidesToScroll: 1, centerMode: false, arrows: true, dots: false};
+    slideConfig = {
+        lazyLoad: 'ondemand', slidesToShow: 1, slidesToScroll: 1, centerMode: false, arrows: true, dots: false, autoplay: true,
+        autoplaySpeed: 5000
+    };
   constructor() { }
 
   ngOnInit() {
