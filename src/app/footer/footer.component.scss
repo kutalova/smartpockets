@@ -121,6 +121,22 @@ footer {
       .footer-right {
         text-align: center;
       }
+
+      .footer-left {
+        .vcard {
+          padding: 1em 0;
+        }
+
+        .networks-wrapper {
+          li {
+            padding: .65em;
+          }
+        }
+      }
+
+      .footer-right {
+        padding-top: 0;
+      }
     }
   }
 }
