@@ -5,9 +5,15 @@
     <h2>Наш блог</h2>
     <div class="post-wrapper">
         <div *ngFor="let item of results" class="post-item">
-            <fb-post [href]="item['permalink_url']" showText="true" width="350">{{item['permalink_url']}}</fb-post>
+            <div id="fb-root">
+                <div [attr.data-href]="item['permalink_url']" class="fb-post" data-show-text="true"
+                     data-width="350">
+
+                </div>
+
+                <!--<fb-post [href]="item['permalink_url']" showText="true" width="350">{{item['permalink_url']}}</fb-post>-->
+            </div>
         </div>
+
+
     </div>
-
-
-</div>

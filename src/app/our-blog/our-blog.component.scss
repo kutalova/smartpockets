@@ -4,14 +4,16 @@
   justify-content: center;
 
   .post-item {
-    margin: 0 2em;
+    margin: 0 1em;
     display: inline-block;
+    width: 350px;
+    max-width: 350px;
 
   }
 
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1100px) {
   .post-wrapper {
     flex-flow: column wrap;
     align-items: center;
@@ -29,4 +31,8 @@
     opacity: 0;
     visibility: hidden;
   }
+}
+
+.fb_iframe_widget {
+  width: 350px !important;
 }
