@@ -1,25 +1,95 @@
 .reviews_wrapper {
+  .slick-prev,
+  .slick-next {
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 30px;
+    //margin: -60px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: .35;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .8);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .3);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 0;
+    //padding: 30px;
+    right: 0;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: icomoon;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    content: "\e929";
+    -webkit-transition: .3s all;
+    transition: .3s all;
+    font-size: 15px;
+    display: inline-block;
+    color: rgba(255, 255, 255, .8);
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .slick-next:before {
+    content: "\e92a";
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    outline: none;
+    background: rgba(0, 0, 0, .8);
+    color: black;
+  }
+
+  .slick-prev {
+    left: -30px;
+  }
+
+  .slick-next {
+    right: -30px;
+  }
   .review-item {
-    padding: 15px;
+    //padding: 15px;
     text-align: center;
+    margin: 0 2em;
+    //width: 300px !important;
+
     img {
-      display: inline-block;
-      margin-bottom: 25px;
-      max-height: 120px;
-      border-radius: 250em;
-      height: auto;
-      max-width: 100%;
-      vertical-align: top;
+      display: block;
+      border-radius: 8em;
+      height: 8em;
+      margin: 0 auto 1.75em;
     }
+
     q {
       color: #111;
-      width: 390px;
-      margin: 0 auto;
+      //width: 390px;
+      margin: 0 auto 1em;
       display: block;
 
-      font-family: "Open Sans", sans-serif, Arial, Helvetica;
+      //font-family: "Open Sans", sans-serif, Arial, Helvetica;
       font-size: 17px;
       font-weight: 300;
+
       &:after,
       &:before {
         content: close-quote;
@@ -27,6 +97,7 @@
         font-size: 44px;
       }
     }
+
     footer:before {
       background: #0f8445;
       display: block;
@@ -35,13 +106,37 @@
       height: 4px;
       margin: 10px auto 15px auto;
     }
+
     footer {
-      padding-top: 12px;
+      //padding-top: 12px;
     }
   }
 }
+
 @media (max-width: 1450px) {
-  .reviews_wrapper .review-item q {
-    width: 300px;
+  .reviews_wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    .review-item q {
+
+
+      max-width: 300px;
+    }
   }
+
+}
+
+@media (max-width: 500px) {
+  .reviews_wrapper {
+
+    .slick-prev {
+      left: 0;
+    }
+
+    .slick-next {
+      right: 0;
+    }
+  }
+
 }
