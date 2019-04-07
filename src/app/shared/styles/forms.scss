@@ -76,6 +76,11 @@ label {
         display: block;
       }
 
+      &[value^='Петля']:after {
+        content: 'Петля';
+        display: block;
+      }
+
       &[value^='Низкого давления']:after {
         content: 'Низкого давления';
         display: block;
@@ -96,6 +101,7 @@ label {
       padding-left: .75em;
       box-sizing: border-box;
       border-color: #ccc;
+      background: #FFF;
 
     }
   }

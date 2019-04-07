@@ -35,7 +35,6 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 })
 export class CustomSelectComponent implements ControlValueAccessor {
     @Input() options = [];
-
     selectedOption: string;
 
     get placeholder(): string {
