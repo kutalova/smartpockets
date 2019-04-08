@@ -34,9 +34,7 @@ export class OurBlogComponent implements OnInit {
     ngOnInit() {
         this.fb.api('smartpocketsua/feed?limit=3&fields=permalink_url&access_token=' + this.token)
             .then((res: any) => {
-                // console.log(res);
                 this.results = res.data;
-                console.log(this.results.length);
             })
             .catch(this.handleError);
 
