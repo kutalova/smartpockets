@@ -47,11 +47,7 @@ export class FormCountComponent implements OnInit {
         uploadData.append('sides', this.countForm.get('sides').value);
         uploadData.append('comment', this.countForm.get('comment').value);
         uploadData.append('count', '1');
-        this.http.post(this.endpoint, uploadData)
-            .subscribe(
-                response => console.log(response),
-                response => console.log(response)
-            );
+        this.http.post(this.endpoint, uploadData);
         this.countForm.reset();
         this.countForm.get('packetType').setValue('Майка');
     }

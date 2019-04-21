@@ -10,7 +10,8 @@ export class HeadSliderComponent implements OnInit {
   slides = [
     { img: '../../assets/img/head-slider-photos/1.jpg', alt: 'slider' },
     { img: '../../assets/img/head-slider-photos/2.jpg', alt: 'slider' },
-    { img: '../../assets/img/head-slider-photos/3.png', alt: 'slider' },
+    {img: '../../assets/img/head-slider-photos/3.jpg', alt: 'slider'},
+    {img: '../../assets/img/head-slider-photos/4.jpg', alt: 'slider'},
   ];
     slideConfig = {
         lazyLoad: 'ondemand', slidesToShow: 1, slidesToScroll: 1, centerMode: false, arrows: true, dots: false, autoplay: true,

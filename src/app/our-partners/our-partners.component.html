@@ -5,8 +5,10 @@
                 [config]="slideConfig"
                 class="carousel"
         >
-            <div *ngFor="let slide of slides" class="partner-item" ngxSlickItem>
-                <img [alt]="slide.alt" [src]="slide.img" width="100%"/>
+            <div *ngFor="let slide of slides"
+                 [ngStyle]="{'background-image': 'url('+slide.img+')', 'background-size': 'contain', 'background-repeat': 'no-repeat', 'background-position': 'center center'}"
+                 class="partner-item" ngxSlickItem>
+                <!--<img [alt]="slide.alt" [src]="slide.img" width="100%"/>-->
             </div>
         </ngx-slick-carousel>
     </div>

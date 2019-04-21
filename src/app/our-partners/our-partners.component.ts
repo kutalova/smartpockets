@@ -11,7 +11,6 @@ export class OurPartnersComponent implements OnInit {
         {img: '../../assets/img/partners/BelenkayaPhLogo.png', alt: 'Belenkaia'},
         {img: '../../assets/img/partners/doba.png', alt: 'doba'},
         {img: '../../assets/img/partners/eks.png', alt: 'EXC'},
-        {img: '../../assets/img/partners/goodfood.png', alt: 'Good Food'},
         {img: '../../assets/img/partners/helenberg.png', alt: 'Helenber'},
         {img: '../../assets/img/partners/isabelle.png', alt: 'Isabelle'},
         {img: '../../assets/img/partners/ITSell.png', alt: 'ITSell'},

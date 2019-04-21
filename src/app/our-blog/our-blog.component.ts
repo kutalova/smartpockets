@@ -19,7 +19,7 @@ export class OurBlogComponent implements OnInit {
     @HostListener('window:resize', ['$event'])
     onResize(event) {
         this.innerWidth = window.innerWidth > 1100 ? 500 : 300;
-        console.log(this.innerWidth);
+        // console.log(this.innerWidth);
     }
     constructor(private http: HttpClient, private fb: FacebookService) {
         let initParams: InitParams = {
