@@ -25,8 +25,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {CustomSelectComponent} from './shared/custom-select.component';
 import {ClickOutsideModule} from 'ng-click-outside';
 
-import {FacebookModule} from 'ngx-facebook';
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,7 +45,7 @@ import {FacebookModule} from 'ngx-facebook';
         HamburgerComponent,
         CustomSelectComponent,
     ],
-    imports: [BrowserModule, SlickCarouselModule, FormsModule, ClickOutsideModule, FacebookModule.forRoot(), ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+    imports: [BrowserModule, SlickCarouselModule, FormsModule, ClickOutsideModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
     providers: [],
     bootstrap: [AppComponent]
 })

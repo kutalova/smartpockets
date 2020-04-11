@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {FacebookService, InitParams} from 'ngx-facebook';
+// import {FacebookService, InitParams} from 'ngx-facebook';
 
 // import {FaceBookPostsService} from '../providers/facebook-graph-service.service';
 
@@ -21,13 +21,14 @@ export class OurBlogComponent implements OnInit {
         this.innerWidth = window.innerWidth > 1100 ? 500 : 300;
         console.log(this.innerWidth);
     }
-    constructor(private http: HttpClient, private fb: FacebookService) {
-        let initParams: InitParams = {
-            appId: '356903014915994',
-            xfbml: true,
-            version: 'v3.2'
-        };
-        fb.init(initParams);
+    constructor(private http: HttpClient) {
+    // constructor(private http: HttpClient, private fb: FacebookService) {
+        // let initParams: InitParams = {
+        //     appId: '356903014915994',
+        //     xfbml: true,
+        //     version: 'v3.2'
+        // };
+        // fb.init(initParams);
 
     }
 
@@ -41,13 +42,13 @@ export class OurBlogComponent implements OnInit {
 // );
 //   GET https://graph.facebook.com/v2.9/LADbible/posts?access_token={ACCESS_TOKEN}
     ngOnInit() {
-        this.fb.api('smartpocketsua/feed?limit=2&fields=permalink_url&access_token=' + this.token)
-            .then((res: any) => {
-                // console.log(res);
-                this.results = res.data;
-                console.log(this.results.length);
-            })
-            .catch(this.handleError);
+        // this.fb.api('smartpocketsua/feed?limit=2&fields=permalink_url&access_token=' + this.token)
+        //     .then((res: any) => {
+        //         // console.log(res);
+        //         this.results = res.data;
+        //         console.log(this.results.length);
+        //     })
+        //     .catch(this.handleError);
 
         // this.fb.getPosts().subscribe(
         //     data => {
@@ -69,7 +70,7 @@ export class OurBlogComponent implements OnInit {
         //     );
     }
 
-    private handleError(error) {
-        console.error('Error processing action', error);
-    }
+    // private handleError(error) {
+    //     console.error('Error processing action', error);
+    // }
 }
