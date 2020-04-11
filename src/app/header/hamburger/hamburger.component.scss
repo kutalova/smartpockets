@@ -32,6 +32,7 @@ a:hover {
 
   -webkit-user-select: none;
   user-select: none;
+
   .ham-wrap {
     float: right;
     margin-top: 1.75em;
@@ -74,7 +75,7 @@ a:hover {
   transform-origin: 4px 0px;
 
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle div span:first-child {
@@ -134,7 +135,13 @@ a:hover {
 
 #menu li {
   padding: 10px 0;
-  font-size: 22px;
+
+  width: 100%;
+
+  a {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 /*

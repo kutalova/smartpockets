@@ -25,6 +25,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {CustomSelectComponent} from './shared/custom-select.component';
 import {ClickOutsideModule} from 'ng-click-outside';
 
+import {SimpleSmoothScrollModule} from 'ng2-simple-smooth-scroll';
+import {UpButtonComponent} from './up-button/up-button.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -44,8 +47,9 @@ import {ClickOutsideModule} from 'ng-click-outside';
         OurCertificatesComponent,
         HamburgerComponent,
         CustomSelectComponent,
+        UpButtonComponent,
     ],
-    imports: [BrowserModule, SlickCarouselModule, FormsModule, ClickOutsideModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+    imports: [BrowserModule, SlickCarouselModule, FormsModule, SimpleSmoothScrollModule, ClickOutsideModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
     providers: [],
     bootstrap: [AppComponent]
 })

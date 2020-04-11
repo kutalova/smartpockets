@@ -19,7 +19,7 @@ export class OurBlogComponent implements OnInit {
     @HostListener('window:resize', ['$event'])
     onResize(event) {
         this.innerWidth = window.innerWidth > 1100 ? 500 : 300;
-        console.log(this.innerWidth);
+        // console.log(this.innerWidth);
     }
     constructor(private http: HttpClient) {
     // constructor(private http: HttpClient, private fb: FacebookService) {
@@ -32,42 +32,13 @@ export class OurBlogComponent implements OnInit {
 
     }
 
-//   FB.api(
-//   '/smartpocketsua/feed',
-//   'GET',
-// {},
-// function(response) {
-//   // Insert your code here
-// }
-// );
-//   GET https://graph.facebook.com/v2.9/LADbible/posts?access_token={ACCESS_TOKEN}
     ngOnInit() {
-        // this.fb.api('smartpocketsua/feed?limit=2&fields=permalink_url&access_token=' + this.token)
+        // this.fb.api('smartpocketsua/feed?limit=3&fields=permalink_url&access_token=' + this.token)
         //     .then((res: any) => {
-        //         // console.log(res);
         //         this.results = res.data;
-        //         console.log(this.results.length);
         //     })
         //     .catch(this.handleError);
 
-        // this.fb.getPosts().subscribe(
-        //     data => {
-        //         this.results = data;
-        //         console.log('values  in results');
-        //         console.log(this.results);
-        //         for (let i of this.results) {
-        //
-        //             console.log('url is ' + i.permalink_url);
-        //         }
-        //     },
-        //
-        //     error => console.log(error)
-        // );
-        // this.http.get('https://graph.facebook.com/v3.2/smartpocketsua/posts?access_token=' + this.token)
-        //     .subscribe(
-        //         response => console.log(response),
-        //         response => console.log(response)
-        //     );
     }
 
     // private handleError(error) {

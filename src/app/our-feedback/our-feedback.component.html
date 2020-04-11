@@ -7,9 +7,9 @@
       [config]="slideConfig"
     >
       <blockquote
-        ngxSlickItem
-        *ngFor="let review of reviews"
-        class="review-item"
+              ngxSlickItem
+              *ngFor="let review of reviews;trackBy: trackByFn"
+              class="review-item"
       >
         <img [src]="review.img" [alt]="review.name" />
         <q [innerHtml]="review.text"></q>

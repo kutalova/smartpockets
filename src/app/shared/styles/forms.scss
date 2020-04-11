@@ -63,7 +63,7 @@ label {
 
       &:checked {
         border-radius: 36px;
-        border: 1px silver dashed;
+        border: 2px #58bb4f dashed;
       }
 
       &[value^='Майка']:after {
@@ -73,6 +73,11 @@ label {
 
       &[value^='Банан']:after {
         content: 'Банан';
+        display: block;
+      }
+
+      &[value^='Петля']:after {
+        content: 'Петля';
         display: block;
       }
 
@@ -96,6 +101,7 @@ label {
       padding-left: .75em;
       box-sizing: border-box;
       border-color: #ccc;
+      background: #FFF;
 
     }
   }

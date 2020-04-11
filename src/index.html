@@ -1,20 +1,211 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Smart Pockets</title>
-  <base href="/">
-  <meta name="keywords" content="Smart Pockets, пакеты, биоразлагаемые пакеты, крафт пакеты, биополиэтилен, разлагаемый полиэтилен, d2w, d2w пакеты, пакеты с логотипом, производство пакетов с логотипом, изготовление пакетов с логотипом, фирменные пакеты, подарочные пакеты, производители, пакет майка, пакет банан, заказ пакетов с логотипом, Украина, Киев, Одесса, пакеты на заказ, печать на пакетах, реклама на пакетах, полиэтиленовые пакеты, на заказ">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://connect.facebook.net/en_US/sdk.js" type="text/javascript"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="utf-8">
+    <meta content="index,follow" name="robots">
+    <title>Smart Pockets - Биопакеты на заказ, печать пакетов с логотипом в Одесса</title>
+    <base href="/">
+    <meta content="Smart Pockets, смарт покетс, пакеты, биоразлагаемые пакеты, крафт пакеты, биополиэтилен, разлагаемый полиэтилен, d2w, d2w пакеты, пакеты с логотипом, пакеты небольшой тираж, пакеты маленький тираж, фирменные пакеты, разлагающиеся кульки, производство пакетов с логотипом, изготовление пакетов с логотипом, фирменные пакеты, подарочные пакеты, производители, пакет майка, пакет банан, заказ пакетов с логотипом, Украина, Киев, Одесса, пакеты на заказ, печать на пакетах, реклама на пакетах, полиэтиленовые пакеты, на заказ"
+          name="keywords">
+    <meta content="public, max-age=31536000, must-revalidate" http-equiv="Cache-Control"/>
+    <meta content="Производство биоразлагаемых пакетов с добавкой d2w на заказ. Печать на бумажных и полиэтиленовых пакетах в Одессе и Украине. Заказать фирменные пакеты по индивидуальному эскизу"
+          name="Description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="http://smartpockets.com.ua" rel="canonical"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-  <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet"/>
+    <script async src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js" type="text/javascript"></script>
+    <style>
+        * {
+            font-family: "Open Sans", Helvetica, sans-serif;
+        }
 
+        body * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-wrapper {
+            max-width: 1400px;
+            padding: 0 0 15px 0;
+            clear: both;
+            margin: 0 auto;
+            position: relative;
+            z-index: 100;
+        }
+
+        .section-wrapper h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: #111;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        .section-wrapper h2:after {
+            content: "";
+            display: block;
+            width: 47px;
+            height: 71px;
+            margin: 30px auto 0;
+            background: url("./assets/img/after_header.png") no-repeat;
+        }
+
+        header {
+            width: 100%;
+            margin: 0 auto;
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            height: 150px;
+            z-index: 125;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 1em;
+        }
+
+        nav.header-ham {
+            display: none;
+        }
+
+        .sp-nav {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .sp-nav > div {
+            display: inline-block;
+            float: right;
+        }
+
+        .sp-nav a.logo {
+            background: url("assets/img/logo.png") no-repeat center center;
+            background-size: contain;
+            width: 8em;
+            height: 6em;
+            margin: 1em;
+            display: inline-block;
+            float: left;
+            color: transparent;
+        }
+
+        .sp-nav a {
+            color: #0a783d;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        .sp-nav .upper-row-wrapper {
+            margin-top: 1em;
+        }
+
+        .sp-nav .upper-row-wrapper ul,
+        .sp-nav .upper-row-wrapper .phone-wrapper {
+            float: right;
+        }
+
+        .sp-nav .upper-row-wrapper .phone-wrapper {
+            padding-right: 1em;
+        }
+
+        .sp-nav .upper-row-wrapper .phone-wrapper a {
+            display: inline-block;
+            line-height: 28px;
+        }
+
+        .sp-nav .networks-wrapper li a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            color: transparent;
+        }
+
+        .sp-nav .tlgrm {
+            background: url("assets/img/telegram-logo.png") no-repeat;
+            background-size: contain;
+        }
+
+        .sp-nav .ig {
+            background: url("assets/img/Instagram.png") no-repeat;
+            background-size: contain;
+        }
+
+        .sp-nav .yt {
+            background: url("assets/img/YouTube.png") no-repeat;
+            background-size: contain;
+        }
+
+        .sp-nav .fb {
+            background: url("assets/img/Facebook.png") no-repeat;
+            background-size: contain;
+        }
+
+        .sp-nav .viber {
+            background: url("assets/img/Viber.png") no-repeat;
+            background-size: contain;
+        }
+
+        @media (max-width: 950px) {
+            .sp-nav a.logo {
+                width: 5.5em;
+                height: 4.5em;
+                margin: 0.75em;
+                z-index: 999;
+                position: relative;
+            }
+
+            .sp-nav .upper-row-wrapper {
+                margin-top: 1.65em;
+                float: left;
+            }
+
+            .sp-nav .lower-row-wrapper {
+                display: none;
+            }
+
+            .sp-nav nav.header-ham {
+                display: block;
+            }
+        }
+
+        @media (max-width: 780px) {
+            header {
+                height: 105px;
+            }
+
+            .sp-nav .networks-wrapper {
+                margin-top: 0.75em;
+            }
+
+            .sp-nav .networks-wrapper li {
+                padding: 0.5em;
+            }
+
+            .sp-nav .networks-wrapper li a {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .sp-nav .upper-row-wrapper {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
 </body>
 </html>

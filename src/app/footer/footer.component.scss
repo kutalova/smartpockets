@@ -45,6 +45,7 @@ footer {
           display: inline-block;
           width: 28px;
           height: 28px;
+          color: transparent;
         }
       }
     }
@@ -99,7 +100,13 @@ footer {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 1400px) {
+  .section-wrapper {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 780px) {
   footer {
     .section-wrapper {
       flex-flow: column;
@@ -113,6 +120,22 @@ footer {
       .footer-left,
       .footer-right {
         text-align: center;
+      }
+
+      .footer-left {
+        .vcard {
+          padding: 1em 0;
+        }
+
+        .networks-wrapper {
+          li {
+            padding: .65em;
+          }
+        }
+      }
+
+      .footer-right {
+        padding-top: 0;
       }
     }
   }
