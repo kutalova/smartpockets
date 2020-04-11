@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {SimpleSmoothScrollService} from 'ng2-simple-smooth-scroll';
 
 @Component({
@@ -6,12 +6,9 @@ import {SimpleSmoothScrollService} from 'ng2-simple-smooth-scroll';
     templateUrl: './up-button.component.html',
     styleUrls: ['./up-button.component.scss']
 })
-export class UpButtonComponent implements OnInit {
+export class UpButtonComponent {
 
     constructor(private smooth: SimpleSmoothScrollService) {
-    }
-
-    ngOnInit() {
     }
 
     goTop() {

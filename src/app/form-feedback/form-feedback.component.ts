@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment.prod';
@@ -7,7 +7,6 @@ import {environment} from '../../environments/environment.prod';
     selector: 'app-form-feedback',
     templateUrl: './form-feedback.component.html',
     styleUrls: ['./form-feedback.component.scss', '../shared/styles/icons.css', '../shared/styles/forms.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormFeedbackComponent implements OnInit {
     feedbackForm: FormGroup;

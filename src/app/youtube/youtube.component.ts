@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
-  styleUrls: ['./youtube.component.scss']
+  styleUrls: ['./youtube.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class YoutubeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class YoutubeComponent {
 
 }

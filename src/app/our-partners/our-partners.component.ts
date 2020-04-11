@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'app-our-partners',
@@ -6,7 +6,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
     styleUrls: ['./our-partners.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class OurPartnersComponent implements OnInit {
+export class OurPartnersComponent {
     slides = [
         {img: '../../assets/img/partners/BelenkayaPhLogo.png', alt: 'Belenkaia'},
         {img: '../../assets/img/partners/doba.png', alt: 'doba'},
@@ -55,9 +55,4 @@ export class OurPartnersComponent implements OnInit {
         ]
     };
 
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
 }

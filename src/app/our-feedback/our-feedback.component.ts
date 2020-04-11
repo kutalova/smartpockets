@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'app-our-feedback',
@@ -6,7 +6,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
     styleUrls: ['./our-feedback.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class OurFeedbackComponent implements OnInit {
+export class OurFeedbackComponent {
     reviews = [
         {
             img: '../../assets/img/user-images/platova.png',
@@ -56,12 +56,6 @@ export class OurFeedbackComponent implements OnInit {
             }
         ]
     };
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
 
     trackByFn(index, item) {
         return index; // or item.id

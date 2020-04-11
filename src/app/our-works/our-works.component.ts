@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'app-our-works',
@@ -6,7 +6,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
     styleUrls: ['./our-works.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class OurWorksComponent implements OnInit {
+export class OurWorksComponent {
     images = [
         {src: '../../assets/img/slider-photos/craft.jpg', big_src: '../../assets/img/slider-photos/big_craft.jpg', type: 'craft'},
         {src: '../../assets/img/slider-photos/banana_1.jpg', big_src: '../../assets/img/slider-photos/big_banana_1.jpg', type: 'banana'},
@@ -40,11 +40,6 @@ export class OurWorksComponent implements OnInit {
         ]
     };
 
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
 
     trackByFn(index, item) {
         return index; // or item.id

@@ -8,7 +8,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class HamburgerComponent implements OnInit {
     hamburgerForm: FormGroup;
-    open: boolean = true;
+    open = true;
 
     constructor(private fb: FormBuilder) {
     }
