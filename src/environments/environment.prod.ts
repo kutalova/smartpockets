@@ -1,5 +1,6 @@
 export const environment = {
     production: true,
-    serverDomainLocal: 'http://localhost/post_mail/sendMail.php',
-    serverDomain: 'http://smartpockets.com.ua/post_mail/sendMail.php',
+    // serverDomain: 'http://localhost:8000/test/mail',
+    serverDomain: 'https://protected-springs-29166.herokuapp.com/test/mail',
+
 };

@@ -2,8 +2,7 @@
     <h2>Связаться с нами</h2>
 </div>
 <div class="section-form-wrapper">
-    <!--<div class="section-wrapper">-->
-    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="form-wrapper">
+    <form [formGroup]="feedbackForm" class="form-wrapper">
 
         <div class="form-group">
             <label for="name">Имя *</label>
@@ -37,7 +36,7 @@
         </div>
         <div class="form-group form-button">
             <div class="form-field">
-                <button type="submit" class="form-submit" [disabled]="!feedbackForm.valid">отправить</button>
+                <button type="submit" class="form-submit" [disabled]="!feedbackForm.valid" (click)="onSubmit()">отправить</button>
             </div>
         </div>
 
