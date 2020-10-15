@@ -1,0 +1,17 @@
+<div (clickOutside)="uncheck()" [formGroup]="hamburgerForm" id="menuToggle">
+  <input formControlName="hamCheck" type="checkbox"/>
+  <div class="ham-wrap">
+    <span class="t"></span> <span class="m"></span> <span class="b"></span>
+  </div>
+  <ul id="menu">
+    <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-300" [showHash]="false" href="#head">Главная</a></li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-150" [showHash]="false" href="#production">Продукция</a>
+    </li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-300" [showHash]="false" href="#count">Рассчитать
+      стоимость</a></li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#mission">Миссия</a></li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [offset]="-300" [showHash]="false" href="#about-us">О нас</a></li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#pa">Для РА</a></li>
+    <li><a (click)="uncheck();" SimpleSmoothScroll [showHash]="false" href="#contacts">Контакты</a></li>
+  </ul>
+</div>

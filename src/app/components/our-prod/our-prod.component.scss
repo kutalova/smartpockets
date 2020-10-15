@@ -21,47 +21,47 @@ $primary: #0a783d;
       font-size: larger;
       position: relative;
       &.banana {
-        background: url("../../assets/img/packets/banana.png") no-repeat top
+        background: url("src/assets/img/packets/banana.png") no-repeat top
           center;
         background-size: contain;
       }
       &.petlia {
-        background: url("../../assets/img/packets/petlia.png") no-repeat top
+        background: url("src/assets/img/packets/petlia.png") no-repeat top
           center;
         background-size: contain;
       }
       &.mayka {
-        background: url("../../assets/img/packets/mayka.png") no-repeat top
+        background: url("src/assets/img/packets/mayka.png") no-repeat top
           center;
         background-size: contain;
       }
       &.fasovka {
-        background: url("../../assets/img/packets/fasovka.png") no-repeat top
+        background: url("src/assets/img/packets/fasovka.png") no-repeat top
           center;
         background-size: contain;
       }
       &.rassada {
-        background: url("../../assets/img/packets/rassada.png") no-repeat top
+        background: url("src/assets/img/packets/rassada.png") no-repeat top
           center;
         background-size: contain;
       }
       &.vklad {
-        background: url("../../assets/img/packets/vklad.png") no-repeat top
+        background: url("src/assets/img/packets/vklad.png") no-repeat top
           center;
         background-size: contain;
       }
       &.without {
-        background: url("../../assets/img/packets/without_print.png") no-repeat
+        background: url("src/assets/img/packets/without_print.png") no-repeat
           top center;
         background-size: contain;
       }
       &.paper {
-        background: url("../../assets/img/packets/paper.png") no-repeat top
+        background: url("src/assets/img/packets/paper.png") no-repeat top
           center;
         background-size: contain;
       }
       &.craft {
-        background: url("../../assets/img/packets/craft.png") no-repeat top
+        background: url("src/assets/img/packets/craft.png") no-repeat top
           center;
         background-size: contain;
       }
@@ -134,7 +134,7 @@ $primary: #0a783d;
   .other-wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    background: url("../../assets/img/other_back.png") no-repeat right center;
+    background: url("src/assets/img/other_back.png") no-repeat right center;
     height: 100%;
     line-height: 181px;
   }

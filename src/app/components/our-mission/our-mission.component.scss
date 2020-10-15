@@ -15,7 +15,7 @@ $i: 1;
       display: inline-block;
       width: 23px;
       height: 14px;
-      background: url("../../assets/img/quote_before.png") no-repeat;
+      background: url("src/assets/img/quote_before.png") no-repeat;
       background-size: cover;
       transform: rotate(-35deg);
       position: relative;
@@ -44,7 +44,7 @@ h2.mission {
   // margin-bottom: 0;
 }
 .mission-wrapper {
-  background: url("../../assets/img/mission_back.png") center center;
+  background: url("src/assets/img/mission_back.png") center center;
   background-size: cover;
   min-height: 100vh;
   display: flex;

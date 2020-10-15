@@ -31,7 +31,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
             </div>
         </div>
     `,
-    styleUrls: [`./custom-select.component.scss`, './styles/icons.css', './styles/forms.scss']
+    styleUrls: [`./custom-select.component.scss`, '../../styles/icons.css', '../../styles/forms.scss']
 })
 export class CustomSelectComponent implements ControlValueAccessor {
     @Input() options = [];
