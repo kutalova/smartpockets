@@ -2,52 +2,13 @@
   <h2>Наша продукция</h2>
   <div class="production-wrapper">
     <div class="production-item">
-      <a class="production-link banana">
-        <span> Пакет с логотипом банан </span>
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-          <a class="examples" data-fancybox="gallery" href="../../../assets/img/slider-photos/big_banana_1.jpg">Примеры
-            работ</a>
-        </div>
-      </a>
-      <a class="production-link mayka">
-        <span> Пакет с логотипом майка </span>
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-        </div>
-      </a>
-      <a class="production-link petlia">
-        <span>Пакет с логотипом
-          с петлевой ручкой </span
-        >
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-        </div>
-      </a>
-      <a class="production-link fasovka">
-        <span>
-          Пакет фасовка тысячник,
-          майка для сыпучих продуктов</span
-        >
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-        </div>
-      </a>
-      <a href="#" class="production-link rassada">
-        <span>Пакеты для рассады(саженцев) </span>
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-        </div>
-      </a>
-      <a class="production-link vklad">
-        <span
-          >Мешки-вкладыши
-          полиэтиленовые
-        </span>
-        <div class="more-button">
-          <a class="examples" href="#count">Просчитать</a><a class="examples" href="#count">Заказать</a>
-        </div>
-      </a>
+      <ng-container *ngFor="let product of mainProducts">
+        <a class="production-link" [ngStyle]="{'background-image': product.icon}">
+          <span> {{product.name}} </span>
+          <app-count-buttons class="buttons" [linkToGallery]="product.link_to_gallery"></app-count-buttons>
+        </a>
+      </ng-container>
+
     </div>
   </div>
 </div>
@@ -57,25 +18,12 @@
 <div class="section-wrapper">
   <div class="production-wrapper">
     <div class="production-item">
-      <a class="production-link without"><span>Пакеты без печати</span>
-        <div class="more-button">
-          <a href="#count" class="examples">Просчитать</a><a href="#count" class="examples">Заказать</a>
-        </div>
-      </a>
-      <a class="production-link paper"><span>Бумажные пакеты</span>
-        <div class="more-button">
-          <a href="#count" class="examples">Просчитать</a><a href="#count" class="examples">Заказать</a>
-          <a href="../../../assets/img/slider-photos/big_paper_1.jpg" data-fancybox="gallery" class="examples">Примеры
-            работ</a>
-        </div>
-      </a>
-      <a class="production-link craft"><span>Крафт пакеты</span>
-        <div class="more-button">
-          <a href="#count" class="examples">Просчитать</a><a href="#count" class="examples">Заказать</a>
-          <a href="../../../assets/img/slider-photos/big_craft.jpg" data-fancybox="gallery" class="examples">Примеры
-            работ</a>
-        </div>
-      </a>
+      <ng-container *ngFor="let product of otherProducts">
+        <a class="production-link" [ngStyle]="{'background-image': product.icon}">
+          <span> {{product.name}} </span>
+          <app-count-buttons class="buttons" [linkToGallery]="product.link_to_gallery"></app-count-buttons>
+        </a>
+      </ng-container>
     </div>
   </div>
 </div>

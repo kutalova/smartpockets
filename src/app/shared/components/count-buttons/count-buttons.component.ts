@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-count-buttons',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./count-buttons.component.scss']
 })
 export class CountButtonsComponent implements OnInit {
+  @Input() linkToGallery: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

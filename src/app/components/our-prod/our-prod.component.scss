@@ -7,6 +7,7 @@ $primary: #0a783d;
     align-items: flex-start;
     justify-content: center;
     align-content: space-between;
+
     .production-link {
       display: inline-block;
       max-width: 325px;
@@ -20,51 +21,10 @@ $primary: #0a783d;
       box-sizing: border-box;
       font-size: larger;
       position: relative;
-      &.banana {
-        background: url("src/assets/img/packets/banana.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.petlia {
-        background: url("src/assets/img/packets/petlia.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.mayka {
-        background: url("src/assets/img/packets/mayka.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.fasovka {
-        background: url("src/assets/img/packets/fasovka.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.rassada {
-        background: url("src/assets/img/packets/rassada.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.vklad {
-        background: url("src/assets/img/packets/vklad.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.without {
-        background: url("src/assets/img/packets/without_print.png") no-repeat
-          top center;
-        background-size: contain;
-      }
-      &.paper {
-        background: url("src/assets/img/packets/paper.png") no-repeat top
-          center;
-        background-size: contain;
-      }
-      &.craft {
-        background: url("src/assets/img/packets/craft.png") no-repeat top
-          center;
-        background-size: contain;
-      }
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
+
       span {
         position: relative;
         display: inline-block;
@@ -113,16 +73,21 @@ $primary: #0a783d;
         }
       }
 
+      .buttons {
+        display: none;
+      }
+
       &:hover {
         animation: .8s jump ease infinite alternate;
 
-        .more-button {
+        .buttons {
           display: flex;
         }
       }
     }
   }
 }
+
 .production-other {
   box-sizing: border-box;
   width: 100%;
@@ -131,6 +96,7 @@ $primary: #0a783d;
   font-size: 28px;
   height: 181px;
   margin: 2em 0;
+
   .other-wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -139,13 +105,15 @@ $primary: #0a783d;
     line-height: 181px;
   }
 }
-@media (max-width: 1450px){
-  .production-other{
-    .other-wrapper{
+
+@media (max-width: 1450px) {
+  .production-other {
+    .other-wrapper {
       padding-left: 2em;
     }
   }
 }
+
 @media (max-width: 1024px) {
   .production-wrapper {
     .production-item {
@@ -157,16 +125,17 @@ $primary: #0a783d;
   }
 }
 
-@media (max-width: 1450px){
-  .production-other{
-    .other-wrapper{
+@media (max-width: 1450px) {
+  .production-other {
+    .other-wrapper {
       padding-left: 2em;
     }
   }
 }
-@media (max-width:550px){
-  .production-other{
-    .other-wrapper{
+
+@media (max-width: 550px) {
+  .production-other {
+    .other-wrapper {
       padding: 2em .35em 0;
       line-height: 30px;
       text-align: center;
