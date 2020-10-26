@@ -108,11 +108,13 @@
 
         .sp-nav .upper-row-wrapper {
             margin-top: 1em;
-        }
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
 
-        .sp-nav .upper-row-wrapper ul,
-        .sp-nav .upper-row-wrapper .phone-wrapper {
-            float: right;
+        }
+        .networks-wrapper {
+          display: flex;
         }
 
         .sp-nav .upper-row-wrapper .phone-wrapper {
@@ -153,6 +155,11 @@
 
         .sp-nav .viber {
             background: url("assets/img/Viber.png") no-repeat;
+            background-size: contain;
+        }
+
+        .sp-nav .whatsup {
+            background: url("assets/img/whatsapp_icon.svg") no-repeat;
             background-size: contain;
         }
 
