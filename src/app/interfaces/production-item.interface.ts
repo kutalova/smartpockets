@@ -1,5 +1,4 @@
-// tslint:disable-next-line:class-name
-export interface productionItemInterface {
+export interface ProductionItemInterface {
   name: string,
   icon: string,
   link_to_gallery?: string
