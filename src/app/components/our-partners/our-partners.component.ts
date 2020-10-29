@@ -8,9 +8,21 @@ import {Component, ViewEncapsulation} from '@angular/core';
 })
 export class OurPartnersComponent {
     slides = [
+        {img: '../../assets/img/partners/icetory.png', alt: 'Icetory'},
+        {img: '../../assets/img/partners/benia.png', alt: 'Benya Zubrik'},
+        {img: '../../assets/img/partners/bla.png', alt: 'Bla bla kids'},
+        {img: '../../assets/img/partners/madison.png', alt: 'Madison'},
+        {img: '../../assets/img/partners/omma.png', alt: 'Omma design'},
+        {img: '../../assets/img/partners/rokova.png', alt: 'Rokova'},
+        {img: '../../assets/img/partners/small.png', alt: 'Small me'},
+        {img: '../../assets/img/partners/tiamo.png', alt: 'Ti amo'},
+        {img: '../../assets/img/partners/tochka.png', alt: 'Точка здоровья'},
+        {img: '../../assets/img/partners/finik.png', alt: 'Финик'},
+        {img: '../../assets/img/partners/frozen.png', alt: 'Frozen Dozen'},
+        {img: '../../assets/img/partners/face.png', alt: 'Face'},
+        {img: '../../assets/img/partners/shabo.png', alt: 'Шабо'},
         {img: '../../assets/img/partners/BelenkayaPhLogo.png', alt: 'Belenkaia'},
         {img: '../../assets/img/partners/doba.png', alt: 'doba'},
-        {img: '../../assets/img/partners/eks.png', alt: 'EXC'},
         {img: '../../assets/img/partners/helenberg.png', alt: 'Helenber'},
         {img: '../../assets/img/partners/isabelle.png', alt: 'Isabelle'},
         {img: '../../assets/img/partners/ITSell.png', alt: 'ITSell'},
