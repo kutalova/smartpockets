@@ -28,10 +28,7 @@ export class OurPartnersComponent {
         {img: '../../assets/img/partners/ITSell.png', alt: 'ITSell'},
         {img: '../../assets/img/partners/julia.png', alt: 'Giulia'},
         {img: '../../assets/img/partners/maersk.png', alt: 'Maersk'},
-        {img: '../../assets/img/partners/majoriki.png', alt: 'Мажорики'},
-        {img: '../../assets/img/partners/marusja.png', alt: 'Маруся'},
         {img: '../../assets/img/partners/palmira.png', alt: 'Пальмира'},
-        {img: '../../assets/img/partners/posh.png', alt: 'Posh'},
         {img: '../../assets/img/partners/SGS.png', alt: 'SGS'},
         {img: '../../assets/img/partners/uspeh.png', alt: 'Успех принт'},
         {
