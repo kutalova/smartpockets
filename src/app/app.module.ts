@@ -28,6 +28,7 @@ import {UpButtonComponent} from './shared/components/up-button/up-button.compone
 import {CountButtonsComponent} from './shared/components/count-buttons/count-buttons.component';
 import {HeaderComponent} from './components/header-group/header/header.component';
 import {HeadSliderComponent} from './components/header-group/head-slider/head-slider.component';
+import {CalculationItemService} from './services/calculation-item.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import {HeadSliderComponent} from './components/header-group/head-slider/head-sl
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule],
-  providers: [],
+  providers: [CalculationItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

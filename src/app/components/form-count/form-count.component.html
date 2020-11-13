@@ -2,33 +2,34 @@
   <h2>Рассчитать стоимость продукции</h2>
 </div>
 <div class="section-form-wrapper">
-  <form [formGroup]="countForm" (ngSubmit)="onSubmit()" class="form-wrapper">
+  <form [formGroup]="countForm" class="form-wrapper">
 
     <div class="form-group form-radiocheck">
+      <div class="form-group form-radiocheck">
+        <label>Тип пакета:</label>
+        <div class="form-field flat" *ngFor="let item of packetType| keyvalue">
+          <label class="form-radio" [for]="item.value">{{item.value}}</label>
+          <input type="radio" name="packetType" [id]="item.value" value='{{item.value}}' formControlName="packetType">
+        </div>
+      </div>
+      <div class="form-group form-radiocheck">
+        <label>Тип печати:</label>
+        <div class="form-field flat" *ngFor="let item of printType | keyvalue">
+          <label class="form-radio" [for]="item.value">{{item.value}}</label>
+          <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
+        </div>
+      </div>
       <div class="form-field flat" *ngFor="let item of packet| keyvalue">
         <label class="form-radio" [for]="item.value">{{item.value}}</label>
         <input type="radio" name="packet" [id]="item.value" value='{{item.value}}' formControlName="packet">
       </div>
     </div>
-    <div class="form-group form-radiocheck">
-      <label>Тип пакета:</label>
-      <div class="form-field flat" *ngFor="let item of packetType| keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="packetType" [id]="item.value" value='{{item.value}}' formControlName="packetType">
-      </div>
-    </div>
+
     <div class="form-group form-radiocheck">
       <label>Тип полиэтилена:</label>
       <div class="form-field flat" *ngFor="let item of polyType | keyvalue">
         <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio"  name="matType" [id]="item.value" value='{{item.value}}' formControlName="matType">
-      </div>
-    </div>
-    <div class="form-group form-radiocheck">
-      <label>Тип печати:</label>
-      <div class="form-field flat" *ngFor="let item of printType | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
+        <input type="radio" name="matType" [id]="item.value" value='{{item.value}}'  formControlName="matType">
       </div>
     </div>
 
@@ -37,7 +38,6 @@
       <label for="name">Размер</label>
       <div class="form-field">
         <app-custom-select
-          [options]="getInfo('size')"
           formControlName="size"></app-custom-select>
 
       </div>
@@ -119,7 +119,7 @@
     </div>
     <div class="form-group form-button">
       <div class="form-field">
-        <button type="submit" class="form-submit" [disabled]="!countForm.valid">отправить</button>
+        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">отправить</button>
       </div>
     </div>
 
