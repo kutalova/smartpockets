@@ -1,6 +1,6 @@
-import {ProductionItemInterface} from '../interfaces/production-item.interface';
+import {productionItemInterface} from '../interfaces/production-item.interface';
 
-export const MainProductsData: ProductionItemInterface[] = [
+export const MainProductsData: productionItemInterface[] = [
   {
     name: 'Пакет с логотипом банан',
     icon: 'url("../../../../assets/img/packets/banana.png")',
@@ -27,7 +27,7 @@ export const MainProductsData: ProductionItemInterface[] = [
 ];
 
 
-export const OtherProductsData: ProductionItemInterface[] = [
+export const OtherProductsData: productionItemInterface[] = [
   {
     name: 'Пакеты без печати',
     icon: 'url("../../../../assets/img/packets/without_print.png")',

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment.prod';
-import {PacketEnum, PacketTypeEnum, PolyethyleneTypeEnum, PrintTypeEnum, SidesEnum} from '../../enums/calculation-item.enum';
 
 @Component({
   selector: 'app-form-count',
@@ -11,34 +10,24 @@ import {PacketEnum, PacketTypeEnum, PolyethyleneTypeEnum, PrintTypeEnum, SidesEn
 })
 export class FormCountComponent implements OnInit {
 
-  packet: typeof PacketEnum = PacketEnum;
-  packetType: typeof PacketTypeEnum = PacketTypeEnum;
-  polyType: typeof PolyethyleneTypeEnum = PolyethyleneTypeEnum;
-  sides: typeof SidesEnum = SidesEnum;
-  printType: typeof PrintTypeEnum = PrintTypeEnum;
-
-
-
   countForm: FormGroup;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
-  // size_banana = ['15*20', '20*30', '24*40', '25*35', '30*40', '40*40', '40*50', '48*40', '50*60', '57*40', '60*70', '69*50'];
-  // size_mayka = ['15*22', '20*35', '20*40', '28*48', '30*48', '35*57', '40*69', '45*69', '40*57'];
-  // size_petlia = ['30*40', '40*50', '50*60', '60*70'];
-  // density_mayka = ['7 мкм', '10 мкм', '15 мкм', '20 мкм', '25 мкм', '30 мкм', '35 мкм', '40 мкм', '45 мкм', '50 мкм'];
-  // density_banana = ['40 мкм', '45 мкм', '50 мкм',
-  //   '55 мкм', '60 мкм', '65 мкм', '70 мкм',
-  //   '75 мкм', '80 мкм', '85 мкм', '90 мкм', '100 мкм'];
-  // density_petlia = ['50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм', '100 мкм'];
-  // copies = ['100', '200', '300', '500', '1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
-  // copies_petlia = ['1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
-  // colour = ['белый', 'цветной', 'прозрачный'];
-  // colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
-  // sidesPacket = ['Односторонний', 'Двусторонний'];
+
+  size_banana = ['15*20', '20*30', '24*40', '25*35', '30*40', '40*40', '40*50', '48*40', '50*60', '57*40', '60*70', '69*50'];
+  size_mayka = ['15*22', '20*35', '20*40', '28*48', '30*48', '35*57', '40*69', '45*69', '40*57'];
+  size_petlia = ['30*40', '40*50', '50*60', '60*70'];
+  density_mayka = ['7 мкм', '10 мкм', '15 мкм', '20 мкм', '25 мкм', '30 мкм', '35 мкм', '40 мкм', '45 мкм', '50 мкм'];
+  density_banana = ['40 мкм', '45 мкм', '50 мкм',
+    '55 мкм', '60 мкм', '65 мкм', '70 мкм',
+    '75 мкм', '80 мкм', '85 мкм', '90 мкм', '100 мкм'];
+  density_petlia = ['50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм', '100 мкм'];
+  copies = ['100', '200', '300', '500', '1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
+  copies_petlia = ['1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
+  colour = ['белый', 'цветной', 'прозрачный'];
+  colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
+  sides = ['Односторонний', 'Двусторонний'];
 
   endpoint = environment.serverDomain;
-  text = 'AAA';
-  PACKET: PacketEnum = PacketEnum.NORMAL;
-
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
   }
@@ -69,20 +58,9 @@ export class FormCountComponent implements OnInit {
   }
 
   getInfo(param: string) {
-    // console.log(this.PACKET);
-    switch (this.PACKET) {
-      case PacketEnum.BIO: {
-        this.text = 'BIO';
-        break;
-      }
-      case PacketEnum.NORMAL: {
-        this.text = 'NORMAL';
-        break;
-      }
-    }
     const packet = this.countForm.get('packetType').value;
     switch (packet) {
-      case this.packetType.BANANA: {
+      case 'Банан': {
         if (param === 'copies') {
           return this.copies;
           break;
@@ -91,7 +69,7 @@ export class FormCountComponent implements OnInit {
           break;
         }
       }
-      case this.packetType.MAYKA: {
+      case 'Майка': {
         if (param === 'copies') {
           return this.copies;
           break;
@@ -100,29 +78,26 @@ export class FormCountComponent implements OnInit {
           break;
         }
       }
-      // case 'Петля': {
-      //   if (param === 'copies') {
-      //     return this.copies_petlia;
-      //     break;
-      //   } else {
-      //     return param === 'size' ? this.size_petlia : this.density_petlia;
-      //     break;
-      //   }
-      //
-      // }
+      case 'Петля': {
+        if (param === 'copies') {
+          return this.copies_petlia;
+          break;
+        } else {
+          return param === 'size' ? this.size_petlia : this.density_petlia;
+          break;
+        }
+
+      }
       default:
         return param === 'size' ? this.size_mayka : this.density_mayka;
     }
-
   }
 
   initForm() {
 
     this.countForm = this.fb.group({
-      packet: [this.packet.NORMAL],
-      packetType: [this.packetType.MAYKA],
-      matType: [this.polyType.NIZKIY],
-      printType: [this.printType.SILK],
+      packetType: ['Майка'],
+      matType: ['Низкого давления'],
       size: ['Выберите значение'],
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
@@ -132,7 +107,7 @@ export class FormCountComponent implements OnInit {
       colour_count: ['1'],
       colour: ['белый'],
       copies: ['Выберите значение'],
-      sides: [this.sidesPacket],
+      sides: ['Односторонний'],
     });
 
   }

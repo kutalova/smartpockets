@@ -5,30 +5,20 @@
   <form [formGroup]="countForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
     <div class="form-group form-radiocheck">
-      <div class="form-field flat" *ngFor="let item of packet| keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="packet" [id]="item.value" value='{{item.value}}' formControlName="packet">
-      </div>
-    </div>
-    <div class="form-group form-radiocheck">
       <label>Тип пакета:</label>
-      <div class="form-field flat" *ngFor="let item of packetType| keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="packetType" [id]="item.value" value='{{item.value}}' formControlName="packetType">
+      <div class="form-field flat">
+        <input class="form-radio" type="radio" name="packetType" value='Майка' formControlName="packetType">
+        <input class="form-radio" type="radio" name='packetType' value='Банан' formControlName="packetType">
+        <input class="form-radio" type="radio" name='packetType' value='Петля' formControlName="packetType">
       </div>
     </div>
     <div class="form-group form-radiocheck">
       <label>Тип полиэтилена:</label>
-      <div class="form-field flat" *ngFor="let item of polyType | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio"  name="matType" [id]="item.value" value='{{item.value}}' formControlName="matType">
-      </div>
-    </div>
-    <div class="form-group form-radiocheck">
-      <label>Тип печати:</label>
-      <div class="form-field flat" *ngFor="let item of printType | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
+      <div class="form-field flat">
+        <input class="form-radio " type="radio" name="matType" value='Низкого давления'
+               formControlName="matType">
+        <input class="form-radio" type="radio" name='matType' value='Высокого давления'
+               formControlName="matType">
       </div>
     </div>
 
