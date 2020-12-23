@@ -62,53 +62,53 @@ export const CalculationSilkItems: PacketCalculationItem[] = [
   },
 
 // SILK ZIP
-
-  {
-    printType: PrintTypeEnum.SILK,
-    packet: PacketEnum.BIO,
-    type: PacketTypeEnum.ZIP,
-    colour: 'прозрачный',
-    copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
-    density: '50 мкм',
-    size: '20*20 см',
-    sides: [SidesEnum.ONE, SidesEnum.TWO]
-  }, {
-    printType: PrintTypeEnum.SILK,
-    packet: PacketEnum.BIO,
-    type: PacketTypeEnum.ZIP,
-    colour: 'прозрачный',
-    copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
-    density: '50 мкм',
-    size: '20*30 см',
-    sides: [SidesEnum.ONE, SidesEnum.TWO]
-  }, {
-    printType: PrintTypeEnum.SILK,
-    packet: PacketEnum.BIO,
-    type: PacketTypeEnum.ZIP,
-    colour: 'прозрачный',
-    copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
-    density: '50 мкм',
-    size: '25*35 см',
-    sides: [SidesEnum.ONE, SidesEnum.TWO]
-  }, {
-    printType: PrintTypeEnum.SILK,
-    packet: PacketEnum.BIO,
-    type: PacketTypeEnum.ZIP,
-    colour: 'прозрачный',
-    copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
-    density: '50 мкм',
-    size: '30*40 см',
-    sides: [SidesEnum.ONE, SidesEnum.TWO]
-  }, {
-    printType: PrintTypeEnum.SILK,
-    packet: PacketEnum.BIO,
-    type: PacketTypeEnum.ZIP,
-    colour: 'прозрачный',
-    copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
-    density: '50 мкм',
-    size: '35*45 см',
-    sides: [SidesEnum.ONE, SidesEnum.TWO]
-  },
+//
+//   {
+//     printType: PrintTypeEnum.SILK,
+//     packet: PacketEnum.BIO,
+//     type: PacketTypeEnum.ZIP,
+//     colour: 'прозрачный',
+//     copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
+//     density: '50 мкм',
+//     size: '20*20 см',
+//     sides: [SidesEnum.ONE, SidesEnum.TWO]
+//   }, {
+//     printType: PrintTypeEnum.SILK,
+//     packet: PacketEnum.BIO,
+//     type: PacketTypeEnum.ZIP,
+//     colour: 'прозрачный',
+//     copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
+//     density: '50 мкм',
+//     size: '20*30 см',
+//     sides: [SidesEnum.ONE, SidesEnum.TWO]
+//   }, {
+//     printType: PrintTypeEnum.SILK,
+//     packet: PacketEnum.BIO,
+//     type: PacketTypeEnum.ZIP,
+//     colour: 'прозрачный',
+//     copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
+//     density: '50 мкм',
+//     size: '25*35 см',
+//     sides: [SidesEnum.ONE, SidesEnum.TWO]
+//   }, {
+//     printType: PrintTypeEnum.SILK,
+//     packet: PacketEnum.BIO,
+//     type: PacketTypeEnum.ZIP,
+//     colour: 'прозрачный',
+//     copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
+//     density: '50 мкм',
+//     size: '30*40 см',
+//     sides: [SidesEnum.ONE, SidesEnum.TWO]
+//   }, {
+//     printType: PrintTypeEnum.SILK,
+//     packet: PacketEnum.BIO,
+//     type: PacketTypeEnum.ZIP,
+//     colour: 'прозрачный',
+//     copies: ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', 'other'],
+//     density: '50 мкм',
+//     size: '35*45 см',
+//     sides: [SidesEnum.ONE, SidesEnum.TWO]
+//   },
 
 // SILK PETLIA
   {

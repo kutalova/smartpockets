@@ -18,11 +18,11 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class FormCountComponent implements OnInit {
 
-  packet: typeof PacketEnum = PacketEnum;
-  packetType: typeof PacketTypeEnum = PacketTypeEnum;
-  polyType: typeof PolyethyleneTypeEnum = PolyethyleneTypeEnum;
-  sides: typeof SidesEnum = SidesEnum;
-  printType: typeof PrintTypeEnum = PrintTypeEnum;
+  _packet: typeof PacketEnum = PacketEnum;
+  _type: typeof PacketTypeEnum = PacketTypeEnum;
+  _polyType: typeof PolyethyleneTypeEnum = PolyethyleneTypeEnum;
+  _sides: typeof SidesEnum = SidesEnum;
+  _printType: typeof PrintTypeEnum = PrintTypeEnum;
 
   silk: PacketCalculationItem[] = CalculationSilkItems;
   banana: PacketCalculationItem[] = CalculationFlexBananaItems;
@@ -48,12 +48,12 @@ export class FormCountComponent implements OnInit {
   endpoint = environment.serverDomain;
   text = 'AAA';
   PACKET: PacketEnum = PacketEnum.NORMAL;
-
+size_options = [];
 
   private readonly _calculationModel: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
   public get sizeOptionsArray() {
-   // return this.calculation.getSizeOptions(this.countForm.value);
+    // return this.calculation.getSizeOptions(this.countForm.value);
     return this._calculationModel.getValue();
   }
 
@@ -63,7 +63,6 @@ export class FormCountComponent implements OnInit {
   }
 
 
-
   constructor(private http: HttpClient,
               private fb: FormBuilder,
               private calculation: CalculationItemService) {
@@ -71,30 +70,14 @@ export class FormCountComponent implements OnInit {
 
   onSubmit() {
 
-    const uploadData = new FormData();
-    uploadData.append('email', this.countForm.get('email').value);
-    uploadData.append('name', this.countForm.get('name').value);
-    uploadData.append('phone', this.countForm.get('phone').value);
-    uploadData.append('packet_type', this.countForm.get('packetType').value);
-    uploadData.append('mat_type', this.countForm.get('matType').value);
-    uploadData.append('size', this.countForm.get('size').value);
-    uploadData.append('density', this.countForm.get('density').value);
-    uploadData.append('copies', this.countForm.get('copies').value);
-    uploadData.append('colour', this.countForm.get('colour').value);
-    uploadData.append('colour_count', this.countForm.get('colour_count').value);
-    uploadData.append('sides', this.countForm.get('sides').value);
-    uploadData.append('comment', this.countForm.get('comment').value);
-    uploadData.append('count', '1');
-    this.http.post(this.endpoint, uploadData).subscribe();
-    this.countForm.reset();
-    this.countForm.get('packetType').setValue('Майка');
   }
 
   ngOnInit() {
     this.initForm();
     this.countForm.valueChanges.subscribe(
-      (values) => {
-        console.log(values);
+      (value: PacketCalculationItem) => {
+        this.size_options = [...this.calculation.getSizeOptions(value)];
+        // this.countForm.get('size').setValue(this.calculation.getSizeOptions(value), { emitEvent: false });
       }
     );
   }
@@ -111,62 +94,30 @@ export class FormCountComponent implements OnInit {
         break;
       }
     }
-    const packet = this.countForm.get('packetType').value;
-    // switch (packet) {
-    //   case this.packetType.BANANA: {
-    //     if (param === 'copies') {
-    //       return this.copies;
-    //       break;
-    //     } else {
-    //       return param === 'size' ? this.size_banana : this.density_banana;
-    //       break;
-    //     }
-    //   }
-    //   case this.packetType.MAYKA: {
-    //     if (param === 'copies') {
-    //       return this.copies;
-    //       break;
-    //     } else {
-    //       return param === 'size' ? this.size_mayka : this.density_mayka;
-    //       break;
-    //     }
-    //   }
-    //   // case 'Петля': {
-    //   //   if (param === 'copies') {
-    //   //     return this.copies_petlia;
-    //   //     break;
-    //   //   } else {
-    //   //     return param === 'size' ? this.size_petlia : this.density_petlia;
-    //   //     break;
-    //   //   }
-    //   //
-    //   // }
-    //   default:
-    //     return param === 'size' ? this.size_mayka : this.density_mayka;
-    // }
+
 
   }
 
   initForm() {
 
     this.countForm = this.fb.group({
-      packet: [this.packet.NORMAL],
-      packetType: [this.packetType.MAYKA],
-      matType: [this.polyType.NIZKIY],
-      printType: [this.printType.SILK],
+      packet: [this._packet.NORMAL],
+      type: [this._type.MAYKA],
+      polyType: [this._polyType.NIZKIY],
+      printType: [this._printType.SILK],
       size: ['Выберите значение'],
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       comment: [''],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       density: ['Выберите значение'],
-      colour_count: ['1'],
+      colourNumber: ['1'],
       colour: ['белый'],
       copies: ['Выберите значение'],
-      sides: [this.sides.ONE],
+      sides: [this._sides.ONE],
     });
 
-    this.countForm.get('size').setValue(this.calculation.getSizeOptions(this.countForm.value));
+    // this.countForm.get('size').setValue(this.calculation.getSizeOptions(this.countForm.value));
 
   }
 }

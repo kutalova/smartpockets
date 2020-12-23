@@ -14,64 +14,20 @@ export class CalculationItemService {
   petlia: PacketCalculationItem[] = CalculationFlexPetliaItems;
   mayka: PacketCalculationItem[] = CalculationFlexMaykaItems;
 
+  items: PacketCalculationItem[] = [...this.silk, ...this.petlia, ...this.banana, ...this.mayka];
 
-  getSizeOptions(values: PacketCalculationItem) {
-    // console.log('size', values);
-    let a;
-    a = [...new Set(this.silk.filter(item => (item.type === PacketTypeEnum.BANANA))
-      .map((item: PacketCalculationItem) => item.size).sort())];
 
-    console.log(a);
-    switch (values.type) {
-      // ПЕТЛЯ
-      case PacketTypeEnum.PETLIA: {
-        switch (values.printType) {
-          case PrintTypeEnum.SILK: {
-            a = [...new Set(this.silk.filter(item => (item.type === PacketTypeEnum.PETLIA))
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-          case PrintTypeEnum.FLEX: {
-            a = [...new Set(this.petlia.filter(item => (item.type === PacketTypeEnum.PETLIA))
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-        }
-        break;
-      }
-      case PacketTypeEnum.MAYKA: {
-        switch (values.printType) {
-          case PrintTypeEnum.SILK: {
-            a = [...new Set(this.silk.filter(item => (item.type === PacketTypeEnum.MAYKA))
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-          case PrintTypeEnum.FLEX: {
-            a = [...new Set(this.mayka.filter(item => (item.type === PacketTypeEnum.PETLIA))
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-        }
-        break;
-      }
+  getSizeOptions(value: PacketCalculationItem) {
 
-      // БАНАН
-      case PacketTypeEnum.BANANA: {
-        switch (values.printType) {
-          case PrintTypeEnum.SILK: {
-            a = [...new Set(this.silk.filter(item => (item.type === PacketTypeEnum.BANANA))
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-          case PrintTypeEnum.FLEX: {
-            a = [...new Set(this.banana
-              .map((item: PacketCalculationItem) => item.size).sort())];
-            break;
-          }
-        }
-      }
-    }
-    return a;
+    let b;
+    b = [...new Set(
+
+      this.items.filter(item => (item.type === value.type))
+      .map((item: PacketCalculationItem) => item.size).sort()
+
+    )];
+    console.log('size', value, b);
+    return b;
   }
 
   getCopies(values: any) {

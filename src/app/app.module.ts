@@ -29,6 +29,7 @@ import {CountButtonsComponent} from './shared/components/count-buttons/count-but
 import {HeaderComponent} from './components/header-group/header/header.component';
 import {HeadSliderComponent} from './components/header-group/head-slider/head-slider.component';
 import {CalculationItemService} from './services/calculation-item.service';
+import {EnumToArrayPipe} from './shared/enumToArray.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {CalculationItemService} from './services/calculation-item.service';
     CustomSelectComponent,
     UpButtonComponent,
     CountButtonsComponent,
+    EnumToArrayPipe
   ],
   imports: [BrowserModule,
     SlickCarouselModule,

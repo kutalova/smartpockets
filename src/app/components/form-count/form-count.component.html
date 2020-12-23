@@ -7,19 +7,19 @@
     <div class="form-group form-radiocheck">
       <div class="form-group form-radiocheck">
         <label>Тип пакета:</label>
-        <div class="form-field flat" *ngFor="let item of packetType| keyvalue">
+        <div class="form-field flat" *ngFor="let item of _type | keyvalue">
           <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="packetType" [id]="item.value" value='{{item.value}}' formControlName="packetType">
+          <input type="radio" name="type" [id]="item.value" value='{{item.value}}' formControlName="type">
         </div>
       </div>
       <div class="form-group form-radiocheck">
         <label>Тип печати:</label>
-        <div class="form-field flat" *ngFor="let item of printType | keyvalue">
+        <div class="form-field flat" *ngFor="let item of _printType | keyvalue">
           <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
+          <input type="radio" name="printType" [id]="item" value='{{item}}' formControlName="printType">
         </div>
       </div>
-      <div class="form-field flat" *ngFor="let item of packet| keyvalue">
+      <div class="form-field flat" *ngFor="let item of _packet | keyvalue">
         <label class="form-radio" [for]="item.value">{{item.value}}</label>
         <input type="radio" name="packet" [id]="item.value" value='{{item.value}}' formControlName="packet">
       </div>
@@ -27,9 +27,9 @@
 
     <div class="form-group form-radiocheck">
       <label>Тип полиэтилена:</label>
-      <div class="form-field flat" *ngFor="let item of polyType | keyvalue">
+      <div class="form-field flat" *ngFor="let item of _polyType | keyvalue">
         <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="matType" [id]="item.value" value='{{item.value}}'  formControlName="matType">
+        <input type="radio" name="polyType" [id]="item.value" value='{{item.value}}' formControlName="polyType">
       </div>
     </div>
 
@@ -38,6 +38,7 @@
       <label for="name">Размер</label>
       <div class="form-field">
         <app-custom-select
+          [options]="size_options"
           formControlName="size"></app-custom-select>
 
       </div>
@@ -72,7 +73,7 @@
     <div class="form-group">
       <label for="name">Кол-во цветов в логотипе</label>
       <div class="form-field">
-        <select formControlName="colour_count">
+        <select formControlName="colourNumber">
           <option *ngFor="let colour of colour_count">{{colour}}</option>
         </select>
 
@@ -82,7 +83,7 @@
       <label for="name">Сторонность</label>
       <div class="form-field">
         <select formControlName="sides">
-          <option *ngFor="let side of sides">{{side}}</option>
+          <option *ngFor="let side of _sides">{{side}}</option>
         </select>
 
       </div>

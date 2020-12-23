@@ -8,7 +8,7 @@ export enum PacketTypeEnum {
   BANANA = 'Банан',
   PETLIA = 'Петля',
   COURRIER = 'Курьерский',
-  ZIP = 'ZIP застежка'
+  // ZIP = 'ZIP застежка'
 }
 
 export enum PolyethyleneTypeEnum {
@@ -31,7 +31,8 @@ export enum SidesEnum {
 export const TYPES_ALLOWED_FOR_SILK = [PacketTypeEnum.MAYKA,
   PacketTypeEnum.PETLIA,
   PacketTypeEnum.BANANA,
-  PacketTypeEnum.ZIP, PacketTypeEnum.COURRIER];
+  // PacketTypeEnum.ZIP,
+  PacketTypeEnum.COURRIER];
 
 export const TYPES_ALLOWED_FOR_FLEX = [PacketTypeEnum.MAYKA,
   PacketTypeEnum.PETLIA,
