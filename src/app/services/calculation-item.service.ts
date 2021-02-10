@@ -21,10 +21,12 @@ export class CalculationItemService {
 
     let b;
     b = [...new Set(
-
-      this.items.filter(item => (item.type === value.type))
-      .map((item: PacketCalculationItem) => item.size).sort()
-
+      this.items.filter(item => (item.type === value.type
+        && item.printType === value.printType
+        && item.colour === value.colour
+        && item.packet === value.packet
+      ))
+        .map((item: PacketCalculationItem) => item.size).sort()
     )];
     console.log('size', value, b);
     return b;

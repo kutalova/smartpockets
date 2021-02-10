@@ -1,8 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment.prod';
-import {PacketEnum, PacketTypeEnum, PolyethyleneTypeEnum, PrintTypeEnum, SidesEnum} from '../../enums/calculation-item.enum';
+import {
+  ColourEnum,
+  PacketEnum,
+  PacketTypeEnum,
+  PolyethyleneTypeEnum,
+  PrintTypeEnum,
+  SidesEnum,
+  TYPES_ALLOWED_FOR_FLEX
+} from '../../enums/calculation-item.enum';
 import {CalculationFlexBananaItems} from '../../data/calculation.flex.banana.data';
 import {CalculationFlexMaykaItems} from '../../data/calculation.flex.mayka.data';
 import {CalculationFlexPetliaItems} from '../../data/calculation.flex.petlia.data';
@@ -23,6 +31,8 @@ export class FormCountComponent implements OnInit {
   _polyType: typeof PolyethyleneTypeEnum = PolyethyleneTypeEnum;
   _sides: typeof SidesEnum = SidesEnum;
   _printType: typeof PrintTypeEnum = PrintTypeEnum;
+  _colour: typeof ColourEnum = ColourEnum;
+  _types_for_flex = TYPES_ALLOWED_FOR_FLEX;
 
   silk: PacketCalculationItem[] = CalculationSilkItems;
   banana: PacketCalculationItem[] = CalculationFlexBananaItems;
@@ -41,7 +51,7 @@ export class FormCountComponent implements OnInit {
   density_petlia = ['50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм', '100 мкм'];
   copies = ['100', '200', '300', '500', '1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
   copies_petlia = ['1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
-  colour = ['белый', 'цветной', 'прозрачный'];
+
   colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
   sidesPacket = ['Односторонний', 'Двусторонний'];
 
@@ -62,6 +72,13 @@ size_options = [];
     this._calculationModel.next(this.calculation.getSizeOptions(this.countForm.value));
   }
 
+public get printType(): AbstractControl {
+    return this.countForm.get('printType');
+}
+
+public get packetType(): AbstractControl {
+    return this.countForm.get('type');
+}
 
   constructor(private http: HttpClient,
               private fb: FormBuilder,
@@ -80,23 +97,11 @@ size_options = [];
         // this.countForm.get('size').setValue(this.calculation.getSizeOptions(value), { emitEvent: false });
       }
     );
+    this.packetType.valueChanges.subscribe((value) => {
+      console.log(value, this.printType.value, this._types_for_flex,this._types_for_flex.includes(this.printType.value));
+    });
   }
 
-  getInfo(param: string) {
-    // console.log(this.PACKET);
-    switch (this.PACKET) {
-      case PacketEnum.BIO: {
-        this.text = 'BIO';
-        break;
-      }
-      case PacketEnum.NORMAL: {
-        this.text = 'NORMAL';
-        break;
-      }
-    }
-
-
-  }
 
   initForm() {
 
@@ -112,7 +117,7 @@ size_options = [];
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       density: ['Выберите значение'],
       colourNumber: ['1'],
-      colour: ['белый'],
+      colour: [this._colour.WHITE],
       copies: ['Выберите значение'],
       sides: [this._sides.ONE],
     });

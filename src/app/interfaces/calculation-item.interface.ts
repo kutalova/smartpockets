@@ -1,4 +1,4 @@
-import {PacketEnum, PacketTypeEnum, PolyethyleneTypeEnum, PrintTypeEnum, SidesEnum} from '../enums/calculation-item.enum';
+import {ColourEnum, PacketEnum, PacketTypeEnum, PolyethyleneTypeEnum, PrintTypeEnum, SidesEnum} from '../enums/calculation-item.enum';
 
 export interface PacketCalculationItem {
   packet?: PacketEnum,
@@ -8,7 +8,7 @@ export interface PacketCalculationItem {
   size?: string,
   density?: string,
   copies?: string[],
-  colour?: string,
+  colour?: ColourEnum,
   colourNumber?: string,
   sides?: SidesEnum[]
 }

@@ -27,6 +27,13 @@ export enum SidesEnum {
   TWO = 'Двусторонний'
 }
 
+export enum ColourEnum {
+  WHITE= 'белый',
+  TRANSPARENT = 'прозрачный',
+  COLOUR = 'цветной',
+  MILK = 'молочный'
+}
+
 
 export const TYPES_ALLOWED_FOR_SILK = [PacketTypeEnum.MAYKA,
   PacketTypeEnum.PETLIA,

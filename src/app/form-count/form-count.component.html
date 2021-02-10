@@ -2,34 +2,23 @@
   <h2>Рассчитать стоимость продукции</h2>
 </div>
 <div class="section-form-wrapper">
-  <form [formGroup]="countForm" class="form-wrapper">
+  <form [formGroup]="countForm" (ngSubmit)="onSubmit()" class="form-wrapper">
 
     <div class="form-group form-radiocheck">
-      <div class="form-group form-radiocheck">
-        <label>Тип пакета:</label>
-        <div class="form-field flat" *ngFor="let item of _type | keyvalue">
-          <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="type" [id]="item.value" value='{{item.value}}' formControlName="type">
-        </div>
-      </div>
-      <div class="form-group form-radiocheck">
-        <label>Тип печати:</label>
-        <div class="form-field flat" *ngFor="let item of _printType | keyvalue">
-          <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
-        </div>
-      </div>
-      <div class="form-field flat" *ngFor="let item of _packet | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="packet" [id]="item.value" value='{{item.value}}' formControlName="packet">
+      <label>Тип пакета:</label>
+      <div class="form-field flat">
+        <input class="form-radio" type="radio" name="packetType" value='Майка' formControlName="packetType">
+        <input class="form-radio" type="radio" name='packetType' value='Банан' formControlName="packetType">
+        <input class="form-radio" type="radio" name='packetType' value='Петля' formControlName="packetType">
       </div>
     </div>
-
     <div class="form-group form-radiocheck">
       <label>Тип полиэтилена:</label>
-      <div class="form-field flat" *ngFor="let item of _polyType | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="polyType" [id]="item.value" value='{{item.value}}' formControlName="polyType">
+      <div class="form-field flat">
+        <input class="form-radio " type="radio" name="matType" value='Низкого давления'
+               formControlName="matType">
+        <input class="form-radio" type="radio" name='matType' value='Высокого давления'
+               formControlName="matType">
       </div>
     </div>
 
@@ -38,7 +27,7 @@
       <label for="name">Размер</label>
       <div class="form-field">
         <app-custom-select
-          [options]="size_options"
+          [options]="getInfo('size')"
           formControlName="size"></app-custom-select>
 
       </div>
@@ -48,7 +37,7 @@
       <div class="form-field">
         <select formControlName="density">
 
-<!--          <option *ngFor="let dens of getInfo('density')">{{dens}}</option>-->
+          <option *ngFor="let dens of getInfo('density')">{{dens}}</option>
         </select>
 
 
@@ -58,7 +47,7 @@
       <label for="name">Тираж</label>
       <div class="form-field">
         <app-custom-select
-          [options]='copies' formControlName="copies"></app-custom-select>
+          [options]="getInfo('copies')" formControlName="copies"></app-custom-select>
 
       </div>
     </div>
@@ -66,14 +55,14 @@
       <label for="name">Цвет пакета</label>
       <div class="form-field">
         <app-custom-select
-          [options]="_colour" formControlName="colour"></app-custom-select>
+          [options]="colour" formControlName="colour"></app-custom-select>
 
       </div>
     </div>
     <div class="form-group">
       <label for="name">Кол-во цветов в логотипе</label>
       <div class="form-field">
-        <select formControlName="colourNumber">
+        <select formControlName="colour_count">
           <option *ngFor="let colour of colour_count">{{colour}}</option>
         </select>
 
@@ -83,7 +72,7 @@
       <label for="name">Сторонность</label>
       <div class="form-field">
         <select formControlName="sides">
-          <option *ngFor="let side of _sides">{{side}}</option>
+          <option *ngFor="let side of sides">{{side}}</option>
         </select>
 
       </div>
@@ -120,7 +109,7 @@
     </div>
     <div class="form-group form-button">
       <div class="form-field">
-        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">отправить</button>
+        <button type="submit" class="form-submit" [disabled]="!countForm.valid">отправить</button>
       </div>
     </div>
 
