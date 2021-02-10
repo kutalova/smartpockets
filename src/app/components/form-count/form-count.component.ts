@@ -23,9 +23,9 @@ export class FormCountComponent implements OnInit {
   density_petlia = ['50 мкм', '60 мкм', '70 мкм', '80 мкм', '90 мкм', '100 мкм'];
   copies = ['100', '200', '300', '500', '1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
   copies_petlia = ['1000', '3000', '5000', '7000', '10 000', '15 000', '20 000', '30 000', '50 000', '100 000'];
-  colour = ['белый', 'цветной', 'прозрачный'];
+  colour = ['білий', 'кольоровий', 'прозорий'];
   colour_count = [1, 2, 3, 4, 5, 6, 7, 8];
-  sides = ['Односторонний', 'Двусторонний'];
+  sides = ['Одностороній', 'Двостороній'];
 
   endpoint = environment.serverDomain;
 
@@ -98,16 +98,16 @@ export class FormCountComponent implements OnInit {
     this.countForm = this.fb.group({
       packetType: ['Майка'],
       matType: ['Низкого давления'],
-      size: ['Выберите значение'],
+      size: ['Оберіть значення'],
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       comment: [''],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      density: ['Выберите значение'],
+      density: ['Оберіть значення'],
       colour_count: ['1'],
-      colour: ['белый'],
-      copies: ['Выберите значение'],
-      sides: ['Односторонний'],
+      colour: ['білий'],
+      copies: ['Оберіть значення'],
+      sides: ['Оберіть значення'],
     });
 
   }
