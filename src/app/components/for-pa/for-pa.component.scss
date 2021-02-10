@@ -13,18 +13,20 @@
   }
 
   .pdf-icon {
-    background: url("src/assets/img/pdf_icon.svg") no-repeat;
+    background: url("src/assets/img/pdf_icon.svg") left center no-repeat;
+    background-size: 20%;
     text-align: center;
-    padding: 10px 10px 10px 26px;
+    padding: 10px 10px 10px 35px;
     color: black;
     text-decoration: none;
     margin-top: 0.5em;
     display: inline-block;
     border-radius: 16px;
-    width: 6em;
+    width: 7em;
     height: 1.5em;
+
     &:hover {
-      background-color: #0a783d;
+      background-color: rgba(10, 120, 61, 0.71);
       color: white;
     }
   }
@@ -48,9 +50,10 @@
       box-sizing: border-box;
       padding: 2em 4em;
     }
-  }
-  .pa-text {
-    width: 85%;
+
+    .pa-text {
+      width: 85%;
+    }
   }
 }
 
