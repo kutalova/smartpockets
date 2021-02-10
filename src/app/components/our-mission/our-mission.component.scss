@@ -51,11 +51,13 @@ h2.mission {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  margin-top: -6em;
+  margin-top: -2em;
   z-index: 2;
   .mission {
     max-width: 450px;
-    padding: 1em 0.75em 1em;
+    padding: 1em;
+    line-height: 1.25;
+    text-indent: 1.5em;
     border-radius: 10px;
     background: #fff;
     margin-top: -0.5em;
@@ -69,7 +71,7 @@ h2.mission {
     $i: $i + 1;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 800px) {
   .testimonial {
     max-width: 35vh;
     font-size: 1.2em;
