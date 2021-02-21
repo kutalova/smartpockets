@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MainProductsData, OtherProductsData} from '../../data/production.data';
-import {ProductionItemInterface} from '../../interfaces/production-item.interface';
+import {productionItemInterface} from '../../interfaces/production-item.interface';
 
 @Component({
   selector: 'app-our-prod',
@@ -9,6 +9,6 @@ import {ProductionItemInterface} from '../../interfaces/production-item.interfac
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OurProdComponent {
- mainProducts: ProductionItemInterface[] = MainProductsData;
- otherProducts: ProductionItemInterface[] = OtherProductsData;
+ mainProducts: productionItemInterface[] = MainProductsData;
+ otherProducts: productionItemInterface[] = OtherProductsData;
 }

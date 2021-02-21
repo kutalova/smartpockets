@@ -82,12 +82,12 @@ label {
       }
 
       &[value^='Низкого давления']:after {
-        content: 'Низкого давления';
+        content: 'Низького тиску';
         display: block;
       }
 
       &[value^='Высокого давления']:after {
-        content: 'Высокого давления';
+        content: 'Високого тиску';
         display: block;
       }
     }

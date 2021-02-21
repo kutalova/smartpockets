@@ -28,6 +28,7 @@ import {UpButtonComponent} from './shared/components/up-button/up-button.compone
 import {CountButtonsComponent} from './shared/components/count-buttons/count-buttons.component';
 import {HeaderComponent} from './components/header-group/header/header.component';
 import {HeadSliderComponent} from './components/header-group/head-slider/head-slider.component';
+import { ForPaComponent } from './components/for-pa/for-pa.component';
 import {CalculationItemService} from './services/calculation-item.service';
 import {EnumToArrayPipe} from './shared/enumToArray.pipe';
 
@@ -53,6 +54,7 @@ import {EnumToArrayPipe} from './shared/enumToArray.pipe';
     UpButtonComponent,
     CountButtonsComponent,
     EnumToArrayPipe
+    ForPaComponent,
   ],
   imports: [BrowserModule,
     SlickCarouselModule,

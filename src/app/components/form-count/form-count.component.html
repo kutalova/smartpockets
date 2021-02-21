@@ -1,5 +1,5 @@
 <div class="section-wrapper" id="count">
-  <h2>Рассчитать стоимость продукции</h2>
+  <h2>Розрахувати вартість продукції</h2>
 </div>
 <div class="section-form-wrapper">
   <form [formGroup]="countForm" class="form-wrapper">
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="form-group form-radiocheck">
-        <label>Тип печати:</label>
+        <label>Тип друку:</label>
         <div class="form-field flat" *ngFor="let item of _printType | keyvalue">
           <label class="form-radio" [for]="item.value">{{item.value}}</label>
           <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group form-radiocheck">
-      <label>Тип полиэтилена:</label>
+      <label>Тип поліетилену:</label>
       <div class="form-field flat" *ngFor="let item of _polyType | keyvalue">
         <label class="form-radio" [for]="item.value">{{item.value}}</label>
         <input type="radio" name="polyType" [id]="item.value" value='{{item.value}}' formControlName="polyType">
@@ -35,7 +35,7 @@
 
 
     <div class="form-group">
-      <label for="name">Размер</label>
+      <label for="name">Розмір</label>
       <div class="form-field">
         <app-custom-select
           [options]="size_options"
@@ -44,7 +44,8 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="name">Плотность</label>
+      <label for="name">
+        Щільність</label>
       <div class="form-field">
         <select formControlName="density">
 
@@ -63,7 +64,8 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="name">Цвет пакета</label>
+      <label for="name">
+        Колір пакета</label>
       <div class="form-field">
         <app-custom-select
           [options]="_colour" formControlName="colour"></app-custom-select>
@@ -71,7 +73,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="name">Кол-во цветов в логотипе</label>
+      <label for="name">Кіл-ть кольорів у логотипі</label>
       <div class="form-field">
         <select formControlName="colourNumber">
           <option *ngFor="let colour of colour_count">{{colour}}</option>
@@ -80,7 +82,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="name">Сторонность</label>
+      <label for="name">Сторонність</label>
       <div class="form-field">
         <select formControlName="sides">
           <option *ngFor="let side of _sides">{{side}}</option>
@@ -89,7 +91,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="name">Имя *</label>
+      <label for="name">Им'я *</label>
       <div class="form-field">
         <i class="icon icon-user2"></i>
         <input type="text" formControlName="name" id="name" class="form-control" required
@@ -113,14 +115,14 @@
       </div>
     </div>
     <div class="form-group form-textarea">
-      <label for="comment">Комментарий</label>
+      <label for="comment">Коментар</label>
       <div class="form-field">
         <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
       </div>
     </div>
     <div class="form-group form-button">
       <div class="form-field">
-        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">отправить</button>
+        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">надіслати</button>
       </div>
     </div>
 

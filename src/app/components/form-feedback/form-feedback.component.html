@@ -1,11 +1,11 @@
 <div class="section-wrapper" id="callback">
-    <h2>Связаться с нами</h2>
+    <h2>Зв'язатися з нами</h2>
 </div>
 <div class="section-form-wrapper">
     <form [formGroup]="feedbackForm" class="form-wrapper">
 
         <div class="form-group">
-            <label for="name">Имя *</label>
+            <label for="name">Им'я *</label>
             <div class="form-field">
                 <i class="icon icon-user2"></i>
                 <input type="text" formControlName="name" id="name" class="form-control" required
@@ -29,14 +29,14 @@
             </div>
         </div>
         <div class="form-group form-textarea">
-            <label for="comment">Комментарий</label>
+            <label for="comment">Коментар</label>
             <div class="form-field">
                 <textarea name="" id="comment" cols="30" rows="10" formControlName="comment">  </textarea>
             </div>
         </div>
         <div class="form-group form-button">
             <div class="form-field">
-                <button type="submit" class="form-submit" [disabled]="!feedbackForm.valid" (click)="onSubmit()">отправить</button>
+                <button type="submit" class="form-submit" [disabled]="!feedbackForm.valid" (click)="onSubmit()">надіслати</button>
             </div>
         </div>
 

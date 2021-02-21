@@ -110,15 +110,15 @@ public get packetType(): AbstractControl {
       type: [this._type.MAYKA],
       polyType: [this._polyType.NIZKIY],
       printType: [this._printType.SILK],
-      size: ['Выберите значение'],
+      size: ['Оберіть значення'],
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       comment: [''],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      density: ['Выберите значение'],
+      density: ['Оберіть значення'],
       colourNumber: ['1'],
       colour: [this._colour.WHITE],
-      copies: ['Выберите значение'],
+      copies: ['Оберіть значення'],
       sides: [this._sides.ONE],
     });
 
