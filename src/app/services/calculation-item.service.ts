@@ -28,12 +28,12 @@ export class CalculationItemService {
       ))
         .map((item: PacketCalculationItem) => item.size).sort()
     )];
-    console.log('size', value, b);
+    // console.log('size', value, b);
     return b;
   }
 
   getCopies(values: any) {
-    console.log('copies', values);
+    // console.log('copies', values);
   }
 
 }

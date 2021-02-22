@@ -58,7 +58,7 @@ export class FormCountComponent implements OnInit {
   endpoint = environment.serverDomain;
   text = 'AAA';
   PACKET: PacketEnum = PacketEnum.NORMAL;
-size_options = [];
+  size_options = [];
 
   private readonly _calculationModel: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
@@ -72,13 +72,21 @@ size_options = [];
     this._calculationModel.next(this.calculation.getSizeOptions(this.countForm.value));
   }
 
-public get printType(): AbstractControl {
+  public get printType(): AbstractControl {
     return this.countForm.get('printType');
-}
+  }
 
-public get packetType(): AbstractControl {
+  public get packetType(): AbstractControl {
     return this.countForm.get('type');
-}
+  }
+
+  public get polyType(): AbstractControl {
+    return this.countForm.get('polyType');
+  }
+
+  public get packet(): AbstractControl {
+    return this.countForm.get('packet');
+  }
 
   constructor(private http: HttpClient,
               private fb: FormBuilder,
@@ -93,12 +101,22 @@ public get packetType(): AbstractControl {
     this.initForm();
     this.countForm.valueChanges.subscribe(
       (value: PacketCalculationItem) => {
+        // console.log(value);
         this.size_options = [...this.calculation.getSizeOptions(value)];
         // this.countForm.get('size').setValue(this.calculation.getSizeOptions(value), { emitEvent: false });
       }
     );
     this.packetType.valueChanges.subscribe((value) => {
-      console.log(value, this.printType.value, this._types_for_flex,this._types_for_flex.includes(this.printType.value));
+      console.log(value);
+      if (!this._types_for_flex.includes(this.packetType.value)) {
+        this.printType.patchValue(this._printType.SILK);
+        this.printType.disable();
+      } else {
+        this.printType.enable();
+      }
+
+      // this._types_for_flex.includes(this.printType.value) ? :
+        console.log(this.packetType.value, this._types_for_flex, this._types_for_flex.includes(this.packetType.value));
     });
   }
 
@@ -106,9 +124,9 @@ public get packetType(): AbstractControl {
   initForm() {
 
     this.countForm = this.fb.group({
-      packet: [this._packet.NORMAL],
-      type: [this._type.MAYKA],
-      polyType: [this._polyType.NIZKIY],
+      packet: [this._packet.BIO],
+      type: [this._type.BANANA],
+      polyType: [this._polyType.VYSOKIY],
       printType: [this._printType.SILK],
       size: ['Оберіть значення'],
       name: ['', Validators.required],

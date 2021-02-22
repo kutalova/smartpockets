@@ -53,7 +53,7 @@ import {EnumToArrayPipe} from './shared/enumToArray.pipe';
     CustomSelectComponent,
     UpButtonComponent,
     CountButtonsComponent,
-    EnumToArrayPipe
+    EnumToArrayPipe,
     ForPaComponent,
   ],
   imports: [BrowserModule,

@@ -5,32 +5,43 @@
   <form [formGroup]="countForm" class="form-wrapper">
 
     <div class="form-group form-radiocheck">
-      <div class="form-group form-radiocheck">
-        <label>Тип пакета:</label>
-        <div class="form-field flat" *ngFor="let item of _type | keyvalue">
-          <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="type" [id]="item.value" value='{{item.value}}' formControlName="type">
-        </div>
+      <label>Тип пакета:</label>
+      <div class="form-field flat" *ngFor="let item of _type | keyvalue"
+           [ngClass]="{checked: packetType.value === item.value}">
+        <label [for]="item.value">{{item.value}}</label>
+        <input class="form-radio" type="radio" name="type" [id]="item.value" value='{{item.value}}'
+               formControlName="type">
       </div>
-      <div class="form-group form-radiocheck">
-        <label>Тип друку:</label>
-        <div class="form-field flat" *ngFor="let item of _printType | keyvalue">
-          <label class="form-radio" [for]="item.value">{{item.value}}</label>
-          <input type="radio" name="printType" [id]="item.value" value='{{item.value}}' formControlName="printType">
-        </div>
+    </div>
+    <div class="form-group form-radiocheck">
+      <label>Тип друку:</label>
+      <div class="form-field flat" *ngFor="let item of _printType | keyvalue"
+           [ngClass]="{ disabled: printType.disabled, checked: printType.value === item.value}"
+      >
+        <label [for]="item.value">{{item.value}}</label>
+        <input class="form-radio" type="radio" name="printType" [id]="item.value" value='{{item.value}}'
+               formControlName="printType">
       </div>
-      <div class="form-field flat" *ngFor="let item of _packet | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="packet" [id]="item.value" value='{{item.value}}' formControlName="packet">
+    </div>
+    <div class="form-group form-radiocheck">
+      <label>Матерiал:</label>
+      <div class="form-field flat" *ngFor="let item of _packet | keyvalue"
+           [ngClass]="{checked: packet.value === item.value}">
+        <label [for]="item.value">{{item.value}}</label>
+        <input class="form-radio" type="radio" name="packet" [id]="item.value" value='{{item.value}}'
+               formControlName="packet">
       </div>
     </div>
 
     <div class="form-group form-radiocheck">
       <label>Тип поліетилену:</label>
-      <div class="form-field flat" *ngFor="let item of _polyType | keyvalue">
-        <label class="form-radio" [for]="item.value">{{item.value}}</label>
-        <input type="radio" name="polyType" [id]="item.value" value='{{item.value}}' formControlName="polyType">
+      <div class="form-field flat" [ngClass]="{checked: polyType.value === item.value}"
+           *ngFor="let item of _polyType | keyvalue">
+        <label [for]="item.value">{{item.value}}</label>
+        <input class="form-radio" type="radio" name="polyType" [id]="item.value" value='{{item.value}}'
+               formControlName="polyType">
       </div>
+
     </div>
 
 
@@ -49,7 +60,7 @@
       <div class="form-field">
         <select formControlName="density">
 
-<!--          <option *ngFor="let dens of getInfo('density')">{{dens}}</option>-->
+          <!--          <option *ngFor="let dens of getInfo('density')">{{dens}}</option>-->
         </select>
 
 

@@ -35,112 +35,90 @@ label {
   margin-bottom: 20px;
   text-align: left;
   flex: 0 0 30%;
+}
 
-  .form-field {
-    position: relative;
+.form-field {
+  position: relative;
 
-    &.flat {
-      display: inline;
-    }
-
-    .form-radio {
-      -webkit-appearance: none;
-
-      width: auto;
-      height: 2em;
-      display: inline-block;
-      line-height: 2em;
-      cursor: pointer;
-      text-align: center;
-      margin: 0 1em;
-      padding: 0 1em;
-      box-sizing: content-box;
-
-      &:focus {
-        border: none;
-        outline: none;
-      }
-
-      &:checked {
-        border-radius: 36px;
-        border: 2px #58bb4f dashed;
-      }
-
-      &[value^='Майка']:after {
-        content: 'Майка';
-        display: block;
-      }
-
-      &[value^='Банан']:after {
-        content: 'Банан';
-        display: block;
-      }
-
-      &[value^='Петля']:after {
-        content: 'Петля';
-        display: block;
-      }
-
-      &[value^='Низкого давления']:after {
-        content: 'Низького тиску';
-        display: block;
-      }
-
-      &[value^='Высокого давления']:after {
-        content: 'Високого тиску';
-        display: block;
-      }
-    }
-
-
-    select {
-      height: 42px;
-      border-radius: 4px;
-      width: 100%;
-      font-size: smaller;
-      padding-left: .75em;
-      box-sizing: border-box;
-      border-color: #ccc;
-      background: #FFF;
-
-    }
+  &.flat {
+    height: 2em;
+    display: inline-block;
+    line-height: 2em;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 1em;
+    padding: 0 1em;
+    box-sizing: content-box;
+    border-radius: 36px;
+    border: 2px transparent dashed;
   }
 
-  .form-control {
-    box-shadow: none;
-    font-size: 14px;
+  &.disabled {
+   color: #666;
+  }
+  &.checked {
+    border-color: #58bb4f;
+    color: black;
+  }
+
+
+  .form-radio {
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: block;
-    width: 100%;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+  }
+
+  select {
     height: 42px;
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    color: #555;
-    outline: 0;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    width: 100%;
+    font-size: smaller;
+    padding-left: .75em;
     box-sizing: border-box;
-
+    border-color: #ccc;
+    background: #FFF;
 
   }
+}
 
+.form-control {
+  box-shadow: none;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  color: #555;
+  outline: 0;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  box-sizing: border-box;
 
-  .form-control:focus {
-    box-shadow: none;
-    border-color: #77d96c;
-  }
 
 }
 
-//.ng-touched.ng-invalid,
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #77d96c;
+}
+
+
 .invalid {
   border: 1px solid red !important;
 }
+
 .form-radiocheck,
 .form-textarea {
   width: 100%;

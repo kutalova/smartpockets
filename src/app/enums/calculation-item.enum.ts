@@ -1,37 +1,37 @@
 export enum PacketEnum {
-  NORMAL = 'Обычный',
-  BIO = 'БИО (d2w)'
+  NORMAL = 'Звичайний',
+  BIO = 'БIО (d2w)'
 }
 
 export enum PacketTypeEnum {
   MAYKA = 'Майка',
   BANANA = 'Банан',
   PETLIA = 'Петля',
-  COURRIER = 'Курьерский',
+  COURRIER = 'Кур\'єрський',
   // ZIP = 'ZIP застежка'
 }
 
 export enum PolyethyleneTypeEnum {
-  NIZKIY = 'Низкого давления',
-  VYSOKIY = 'Высокого давления',
+  NIZKIY = 'Низького тиску',
+  VYSOKIY = 'Високого тиску',
 
 }
 
 export enum PrintTypeEnum {
-  SILK = 'Шелкотрафарет',
-  FLEX = 'Флексопечать'
+  SILK = 'Шовкодрук',
+  FLEX = 'Флексодрук'
 }
 
 export enum SidesEnum {
-  ONE = 'Односторонний',
-  TWO = 'Двусторонний'
+  ONE = 'Односторонiй',
+  TWO = 'Двоcторонiй'
 }
 
 export enum ColourEnum {
-  WHITE= 'белый',
-  TRANSPARENT = 'прозрачный',
-  COLOUR = 'цветной',
-  MILK = 'молочный'
+  WHITE= 'бiлий',
+  TRANSPARENT = 'прозорий',
+  COLOUR = 'кольоровий',
+  MILK = 'молочний'
 }
 
 
