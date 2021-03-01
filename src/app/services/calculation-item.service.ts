@@ -18,6 +18,17 @@ export class CalculationItemService {
 
 
   getSizeOptions(value: PacketCalculationItem) {
+    return  [...new Set(
+      this.items.filter(item => (item.type === value.type
+        && item.printType === value.printType
+        && item.colour === value.colour
+        && item.packet === value.packet
+      ))
+        .map((item: PacketCalculationItem) => item.size).sort()
+    )];
+  }
+
+  getPolyOptions(value: PacketCalculationItem) {
 
     let b;
     b = [...new Set(
@@ -32,8 +43,18 @@ export class CalculationItemService {
     return b;
   }
 
-  getCopies(values: any) {
-    // console.log('copies', values);
+  getCopies(value: PacketCalculationItem) {
+    return  [...new Set(
+      this.items.filter(item => (item.type === value.type
+        && item.printType === value.printType
+        && item.colour === value.colour
+        && item.packet === value.packet
+      ))
+        .map((item: PacketCalculationItem) => item.copies).reduce((acc, currVAl) => {
+          // console.log(acc, currVAl);
+          return [...acc, ...currVAl];
+      })
+    )];
   }
 
 }

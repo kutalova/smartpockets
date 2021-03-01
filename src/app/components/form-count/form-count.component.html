@@ -48,9 +48,10 @@
     <div class="form-group">
       <label for="name">Розмір</label>
       <div class="form-field">
-        <app-custom-select
-          [options]="size_options"
-          formControlName="size"></app-custom-select>
+        <select formControlName="size">
+
+          <option *ngFor="let size of size_options">{{size}}</option>
+        </select>
 
       </div>
     </div>
@@ -59,27 +60,25 @@
         Щільність</label>
       <div class="form-field">
         <select formControlName="density">
-
-          <!--          <option *ngFor="let dens of getInfo('density')">{{dens}}</option>-->
+          <option *ngFor="let dens of dens_options">{{dens}}</option>
         </select>
-
-
       </div>
     </div>
     <div class="form-group">
       <label for="name">Тираж</label>
       <div class="form-field">
-        <app-custom-select
-          [options]='copies' formControlName="copies"></app-custom-select>
-
+        <select formControlName="density">
+          <option *ngFor="let copy of copies_options">{{copy}}</option>
+        </select>
       </div>
     </div>
     <div class="form-group">
       <label for="name">
         Колір пакета</label>
       <div class="form-field">
-        <app-custom-select
-          [options]="_colour" formControlName="colour"></app-custom-select>
+        <select formControlName="density">
+          <option *ngFor="let copy of copies_options">{{copy}}</option>
+        </select>
 
       </div>
     </div>
@@ -133,7 +132,8 @@
     </div>
     <div class="form-group form-button">
       <div class="form-field">
-        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">надіслати</button>
+        <button type="submit" class="form-submit" [disabled]="!countForm.valid" (click)="onSubmit()">надіслати
+        </button>
       </div>
     </div>
 
